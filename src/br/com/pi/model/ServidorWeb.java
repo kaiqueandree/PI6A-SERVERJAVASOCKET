@@ -1,10 +1,15 @@
 package br.com.pi.model;
 
+
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.OutputStream;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
@@ -15,17 +20,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.StringTokenizer;
+
+
 
 
 public class ServidorWeb {
 	
 	private int codigo;
 	private String status;
+	private boolean ativo;
+	
 	private Timestamp dataAcesso;
 	private ServerSocket servidor;
 	private Socket cliente;
-
+	PrintWriter envia;
 	
 	public ServidorWeb(int codigo, String status, Timestamp dataAcesso) {
 		this.codigo = codigo;
@@ -33,49 +42,113 @@ public class ServidorWeb {
 		this.dataAcesso = dataAcesso;
 	}
 	
-	public ServidorWeb() {
+	TelaServidorWeb frame;
+	
+	public ServidorWeb(TelaServidorWeb frame) {
+		this.frame = frame;
 	}
 	
-	
-	public void iniciar() throws IOException {
-        servidor = new ServerSocket(12345);
+public void iniciar() throws IOException {
+    	servidor = new ServerSocket(12345);
+    	System.out.println("Servidor Iniciado.");
+   
+	}	
 
+public void clienteListener() throws IOException {
+	
+	while(true) {
         cliente = servidor.accept();
-        Scanner scanner = new Scanner(cliente.getInputStream());
-        while (true) {
-    
-           BufferedReader in = new BufferedReader(
-                           new InputStreamReader(cliente.getInputStream())
-                          ); 
-            PrintWriter out = new PrintWriter(
-                         new BufferedWriter(
-                            new OutputStreamWriter(cliente.getOutputStream())), 
-                         true);   
-            String s;
-            while ((s = in.readLine()) != null) {
-            	
-            System.out.println(s);   
-            
-            out.write("\r\n");
-            out.write("<TITLE>Teste</TITLE>");
-            out.write("<P>Hello World</P>");
+	    System.out.println("Connected to " + cliente.getRemoteSocketAddress());
+	    
+	    OutputStream saida = cliente.getOutputStream();
+	    BufferedReader in = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
+	    PrintStream out = new PrintStream(new BufferedOutputStream(cliente.getOutputStream()));
 
-            System.err.println("Erro");
-            out.close();
-            in.close();
-            cliente.close();
-            }
-        }
-    }
+	    String request=in.readLine();
+	    System.out.println(request);
     
-    public void enviarMensagem(String mensagem) throws IOException {
-        PrintStream saida = new PrintStream(cliente.getOutputStream());
-        saida.println(mensagem);
-    }
-	
+	    String arquivo = "";
+	    StringTokenizer st = new StringTokenizer(request);
+	    
+	    try {
+
+	         if (st.hasMoreElements() && st.nextToken().equalsIgnoreCase("GET") && st.hasMoreElements()) {
+	        	 arquivo=st.nextToken();
+	         }
+	    	 else {
+	    	          throw new FileNotFoundException();
+	    	        }
+	    	        // Append trailing "/" with "index.html"
+	    	        if (arquivo.endsWith("/")) {
+	    	        	arquivo+="index.html";
+	    	        	System.out.println("PÃ¡gina Inicial");
+	    	        }
+	    	        
+	    	       
+	    	        while (arquivo.indexOf("/") == 0) {
+	    	        	arquivo = arquivo.substring(1);
+	    	        	
+	    	        }
+
+	    	        InputStream f = new FileInputStream(arquivo);
+
+	    	        String type="text/plain";
+	    	        if (arquivo.endsWith(".html") || arquivo.endsWith(".htm")) {
+	    	        	type = "text/html";
+	    	        }
+	    	          
+	    	        else if (arquivo.endsWith(".jpg") || arquivo.endsWith(".jpeg")) {
+	    	        	type = "image/jpeg";
+	    	        }
+	    	          
+	    	        else if (arquivo.endsWith(".gif")) {
+	    	        	type = "image/gif";
+	    	        }
+	    	        	
+	    	        else if (arquivo.endsWith(".class")) {
+	    	        	type = "application/octet-stream";
+	    	        }
+	    	        	
+	    	        out.print("HTTP/1.0 200 OK\r\nContent-type: "+type+"\r\n\r\n");
+
+	    	        byte[] a = new byte[4096];
+	    	        int i;
+	    	        while ((i = f.read(a)) > 0) {
+		    	          out.write(a, 0, i);
+	    	        }
+	    	        
+		    	    out.close();
+		    	      }
+	    
+	    	      catch (FileNotFoundException x) {
+	    	    	  
+	    	        out.println("HTTP/1.0 404 Not Found\r\n"+
+	    	          "Content-type: text/html\r\n\r\n"+
+	    	          "<html>"
+	    	          + "<head>"
+	    	          + "</head>"
+	    	          + "<body><img src=\"404.jpg\" style=\"width:500px; height:400px\" title=\"error_404\" alt=\"error_404\">"+"</body></html>\n");
+	    	        out.close();
+	}    
+	}
+	}
 	
 
-	public int getCodigo() {
+
+public void enviarMensagem(String Data) {
+	try {
+		
+		PrintStream saida = new PrintStream(cliente.getOutputStream());
+		saida.println(Data);
+		
+		System.out.println(Data);
+		
+	} catch (IOException e) {
+		e.printStackTrace();
+	}  
+}
+
+    public int getCodigo() {
 		return codigo;
 	}
 
@@ -102,19 +175,16 @@ public class ServidorWeb {
 		return status;
 	}
 	
-	 public String isActive() {
-		 // Metodo para implementar a ativação do servidor, próximo passo.
-		// if(Connection conn != null) { // Metodo incorreto, não valido.
-			 return "Ativo"; 
-		// }
-		// else {
-		//	 return "Inativo";
-		// }
-		
-	 }
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
 	
 	
-	// Lista o valor de todas as ações uma a uma para gerar a lista.
+	// Lista o valor de todas as aÃ§Ãµes uma a uma para gerar a lista.
 	 public ArrayList<ServidorWeb> listarAcoes(Connection conn) throws SQLException{
 	      String sqlSelect = 
 	         "SELECT id,hora_data,acao FROM LogServidor";
@@ -160,25 +230,17 @@ public class ServidorWeb {
 	         e.printStackTrace();
 	      }
 	   }
-	 
-	 public static void main(String[] args) throws IOException {
 
-		        ServerSocket servidor = new ServerSocket(12345);
-		        System.out.println("Porta 12345 aberta!");
+	public void parar() throws IOException {
+		
+				//envia.close();
+				//out.close();
+				//cliente.close();
+		        //servidor.close();
+		        //cliente = null;
+		        //servidor = null;
+				
 
-		        Socket cliente = servidor.accept();
-		        System.out.println("Nova conexão com o cliente " +     
-		            cliente.getInetAddress().getHostAddress()
-		        );
-
-		        Scanner s = new Scanner(cliente.getInputStream());
-		        while (s.hasNextLine()) {
-		            System.out.println(s.nextLine());
-		        }
-
-		        s.close();
-		        servidor.close();
-		        cliente.close();
-		    }
+	}
 	
 }
