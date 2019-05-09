@@ -16,7 +16,7 @@ public class ConnectionFactory{
    public Connection getConnection() throws SQLException{
       return DriverManager.getConnection(
          "jdbc:mysql://localhost:3306/pi6a?user=root&"
-         + "password=Copa2022!");
+         + "password=");
    }
    
 
