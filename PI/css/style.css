@@ -22,8 +22,12 @@ body {
   margin: auto;
 }
 
-
 /* footer */
+
+footer {
+  bottom: 0px;
+  position: relative;
+}
 
 .footer-link {
   color: #eee;
@@ -43,7 +47,7 @@ body {
 
 
 
-/* Titles-Beginning*/ 
+/* Titles-Beginning*/ /*
 .title-integrantes{
   display:block;
   text-align: center;
