@@ -1,0 +1,122 @@
+mai 08, 2019 5:16:28 PM br.com.pi.model.ServidorWeb iniciar
+INFO: Servidor Iniciado às Wed May 08 17:16:28 BRT 2019
+mai 08, 2019 5:16:35 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27046
+mai 08, 2019 5:16:35 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET / HTTP/1.1
+mai 08, 2019 5:16:35 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27047
+mai 08, 2019 5:16:35 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /favicon.ico HTTP/1.1
+mai 08, 2019 5:16:52 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27049
+mai 08, 2019 5:16:52 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/html/ HTTP/1.1
+mai 08, 2019 5:16:52 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27050
+mai 08, 2019 5:16:52 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/CSS/CSSReset.css HTTP/1.1
+mai 08, 2019 5:16:52 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27051
+mai 08, 2019 5:16:52 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/CSS/estilo.css HTTP/1.1
+mai 08, 2019 5:16:52 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27052
+mai 08, 2019 5:16:52 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/IMGS/server-web.jpg HTTP/1.1
+mai 08, 2019 5:16:59 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27054
+mai 08, 2019 5:17:01 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/html/integrantes.html HTTP/1.1
+mai 08, 2019 5:17:01 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27055
+mai 08, 2019 5:17:01 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/CSS/CSSReset.css HTTP/1.1
+mai 08, 2019 5:17:01 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27056
+mai 08, 2019 5:17:01 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/CSS/estilo.css HTTP/1.1
+mai 08, 2019 5:17:01 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27057
+mai 08, 2019 5:17:01 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/IMGS/jhonatan.jpg HTTP/1.1
+mai 08, 2019 5:17:02 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27058
+mai 08, 2019 5:17:02 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/IMGS/server-web.jpg HTTP/1.1
+mai 08, 2019 5:17:02 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27059
+mai 08, 2019 5:17:02 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/IMGS/kaique.jpg HTTP/1.1
+mai 08, 2019 5:17:02 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27060
+mai 08, 2019 5:17:02 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/IMGS/lucas.jpg HTTP/1.1
+mai 08, 2019 5:17:02 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27062
+mai 08, 2019 5:17:02 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/IMGS/lucasr.jpg HTTP/1.1
+mai 08, 2019 5:17:02 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27063
+mai 08, 2019 5:17:02 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/IMGS/raul.jpg HTTP/1.1
+mai 08, 2019 5:17:05 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27064
+mai 08, 2019 5:17:07 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/html/calendario.html HTTP/1.1
+mai 08, 2019 5:17:07 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27065
+mai 08, 2019 5:17:07 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/CSS/CSSReset.css HTTP/1.1
+mai 08, 2019 5:17:07 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27066
+mai 08, 2019 5:17:07 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/CSS/estilo.css HTTP/1.1
+mai 08, 2019 5:17:07 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27067
+mai 08, 2019 5:17:07 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/IMGS/server-web.jpg HTTP/1.1
+mai 08, 2019 5:17:12 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27068
+mai 08, 2019 5:17:14 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/html/sobre.html HTTP/1.1
+mai 08, 2019 5:17:14 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27069
+mai 08, 2019 5:17:14 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/CSS/CSSReset.css HTTP/1.1
+mai 08, 2019 5:17:14 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27070
+mai 08, 2019 5:17:14 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/CSS/estilo.css HTTP/1.1
+mai 08, 2019 5:17:14 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27071
+mai 08, 2019 5:17:14 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/IMGS/Figura2.PNG HTTP/1.1
+mai 08, 2019 5:17:16 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27072
+mai 08, 2019 5:17:16 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/IMGS/Figura1.PNG HTTP/1.1
+mai 08, 2019 5:17:16 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27073
+mai 08, 2019 5:17:16 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/IMGS/server-web.jpg HTTP/1.1
+mai 08, 2019 5:17:17 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27074
+mai 08, 2019 5:17:21 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/html/index.html HTTP/1.1
+mai 08, 2019 5:17:21 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27075
+mai 08, 2019 5:17:21 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/CSS/CSSReset.css HTTP/1.1
+mai 08, 2019 5:17:21 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27076
+mai 08, 2019 5:17:21 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/CSS/estilo.css HTTP/1.1
+mai 08, 2019 5:17:21 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27077
+mai 08, 2019 5:17:21 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: GET /PI/IMGS/server-web.jpg HTTP/1.1
+mai 08, 2019 5:17:22 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: Conectado à /127.0.0.1:27078
+mai 08, 2019 5:17:27 PM br.com.pi.model.ServidorWeb clienteListener
+INFO: null
