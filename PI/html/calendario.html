@@ -1,203 +1,121 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>			
-    	<meta charset="UTF-8" />
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>Projeto Interdisciplinar 6A</title>
-		<link rel="stylesheet" type="text/css" href="../CSS/CSSReset.css"	 />
-		<link rel="stylesheet" type="text/css" href="../CSS/estilo.css"	 />	
-		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />	
-		<link rel="icon" href="../IMGS/server-web-transparente.jpg" />	
-	</head>
-<body style="background-color:white">
-    	<div class="topo-da-pagina">
-			<img src="../IMGS/server-web.jpg"  alt="icon" class="icone-topo">
-			<h1 class="title-projeto">Projeto Interdisciplinar 6A</h1>
-			<ul class="menu-horizontal-ul">
-				<li class="menu-horizontal-ul-li">
-					<a href="/PI/html/index.html" class="menu-horizontal-ul-li-a"><b>Home</b></a>
-				</li>
-				<li class="menu-horizontal-ul-li">
-					<a href="/PI/html/sobre.html" class="menu-horizontal-ul-li-a"><b>Sobre o Projeto</b></a>
-						<ul class="menu-horizontal-ul">
-							<li class="menu-horizontal-ul-li"> 
-								<a href="/PI/html/sobre.html" class="menu-horizontal-ul-li-a"><i>Objetivo</i></a>
-							</li>
-							<li class="menu-horizontal-ul-li">
-								<a href="/PI/html/sobre.html" class="menu-horizontal-ul-li-a"><i>Introdução</i></a>
-							</li>
-						</ul>
-				</li>
-				<li class="menu-horizontal-ul-li">
-					<a href="/PI/html/integrantes.html" class="menu-horizontal-ul-li-a"><b>Integrantes</b></a>
-						<ul class="menu-horizontal-ul">
-							<li class="menu-horizontal-ul-li">
-								<a href="#" class="menu-horizontal-ul-li-a"><i>A equipe</i></a>
-							</li>
-						</ul>
-				</li>
-				<li class="menu-horizontal-ul-li">
-					<a href="/PI/html/calendario.html" class="menu-horizontal-ul-li-a"><b>Calendário</b></a>
-				</li>
-				<li class="menu-horizontal-ul-li">
-					<a href="/PI/html/contato.html" class="menu-horizontal-ul-li-a"><b>Contato</b></a>
-				</li>
-			</ul>
-		</div>
-
-		<div class="tabela-entrega">
-			<h1 class="titulo-calendario">Calendário de Entregas</h1>
-			<table class="tabela-table" >
-				<tr class="tabela-table-tr">
-					<th class="tabela-table-tr-th">ID</th>
-					<th class="tabela-table-tr-th">Entrega</th>
-					<th class="tabela-table-tr-th">Meio</th>
-					<th class="tabela-table-tr-th">Data</th>
-				</tr>
-				<tr class="tabela-table-tr">
-					<td class="tabela-table-tr-td">1</td>
-					<td class="tabela-table-tr-td">Criação de uma pasta no Google Drive e compartilhá-la com o professor e com os demais membros do grupo.</td>
-					<td class="tabela-table-tr-td">Enviar o link por e-mail.</td>
-					<td class="tabela-table-tr-td">20/02/2019</td>
-				</tr>
-				<tr class="tabela-table-tr">
-					<td class="tabela-table-tr-td">2</td>
-					<td class="tabela-table-tr-td">Script SQL para criação da base. A base deve retratar exatamente aquilo contido no DER da Figura 2.</td>
-					<td class="tabela-table-tr-td">Postagem do arquivo.sql no Google Drive.</td>
-					<td class="tabela-table-tr-td">27/02/2019</td>
-				</tr>
-				<tr class="tabela-table-tr">
-					<td class="tabela-table-tr-td">3</td>
-					<td class="tabela-table-tr-td">Interface gráfica conforme Figura 1. Somente a interface gráfica, não sendo necessária a implementação
-					das funcionalidades. Não é permitido o uso de ferarmentas de geração de código (como Netbeans ou qualquer outra).
-					</td>
-					<td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
-					<td class="tabela-table-tr-td">13/03/2019</td>
-				</tr>
-				<tr class="tabela-table-tr">
-					<td class="tabela-table-tr-td">4</td>
-					<td class="tabela-table-tr-td">Código em Java implementando Socket respondendo um simples texto "Hello World!" na tela do navegador
-						do cliente.
-					</td>
-					<td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
-					<td class="tabela-table-tr-td">27/03/2019</td>
-				</tr>
-				<tr class="tabela-table-tr">
-					<td class="tabela-table-tr-td">5</td>
-					<td class="tabela-table-tr-td">Código em Java implementando Socket devolvendo o arquivo buscado pelo cliente. Não é necessário
-						implementar Threads.
-					</td>
-					<td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
-					<td class="tabela-table-tr-td">03/04/2019</td>
-				</tr>
-				<tr class="tabela-table-tr">
-					<td class="tabela-table-tr-td">6</td>
-						<td class="tabela-table-tr-td">Código em Java implementando Socket devolvendo o arquivo buscado pelo cliente. Agora, deve ser
-							implementando em Threads.
-				</td>
-				<td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
-					<td class="tabela-table-tr-td">17/04/2019</td>
-				</tr>
-				<tr class="tabela-table-tr">
-					<td class="tabela-table-tr-td">7</td>
-					<td class="tabela-table-tr-td">Implementar a diferenciação dos tipos de métodos HTTP utilizados na requisição do cliente: GET e HEAD.
-					</td>
-					<td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
-					<td class="tabela-table-tr-td">24/04/2019</td>
-				</tr>
-				<tr class="tabela-table-tr">
-						<td class="tabela-table-tr-td">8</td>
-						<td class="tabela-table-tr-td">Implementar o registro dos Logs de cada arquivo acessado pelo cliente.
-						</td>
-						<td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
-						<td class="tabela-table-tr-td">08/05/2019</td>
-				</tr>
-				<tr class="tabela-table-tr">
-						<td class="tabela-table-tr-td">9</td>
-						<td class="tabela-table-tr-td">Implementar as mensagens de erros, deverá registrar nos Logs também.
-						</td>
-						<td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
-						<td class="tabela-table-tr-td">15/05/2019</td>
-				</tr>
-				<tr class="tabela-table-tr">
-						<td class="tabela-table-tr-td">10</td>
-						<td class="tabela-table-tr-td">Implementar os relatórios para serem apresentado ao administrador do sistema.
-						</td>
-						<td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
-						<td class="tabela-table-tr-td">22/05/2019</td>
-				</tr>
-				<tr class="tabela-table-tr">
-						<td class="tabela-table-tr-td">11</td>
-						<td class="tabela-table-tr-td">Integração entre a interface gráfica implementada na entrega 3 e o servidor.
-						</td>
-						<td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
-						<td class="tabela-table-tr-td">29/05/2019</td>
-				</tr>
-				<tr class="tabela-table-tr">
-						<td class="tabela-table-tr-td">12</td>
-						<td class="tabela-table-tr-td">Aula de acompanhamento e plantão de dúvidas.
-						</td>
-						<td class="tabela-table-tr-td">Sem entrega.</td>
-						<td class="tabela-table-tr-td">05/06/2019</td>
-				</tr>
-				<tr class="tabela-table-tr">
-						<td class="tabela-table-tr-td">13</td>
-						<td class="tabela-table-tr-td">Apresentações preliminares ao professor. 15 minutos para cada grupo. (Apresentação eliminatória, o 
-							professor decide aqui se o grupo vai à banca ou não).
-						</td>
-						<td class="tabela-table-tr-td">-</td>
-						<td class="tabela-table-tr-td">12/06/2019</td>
-				</tr>
-				<tr class="tabela-table-tr">
-						<td class="tabela-table-tr-td">14</td>
-						<td class="tabela-table-tr-td">Banca
-						</td>
-						<td class="tabela-table-tr-td">Apresentação para a banca de professores.</td>
-						<td class="tabela-table-tr-td">19/06/2019</td>
-				</tr>
-			</table>
-
-		</div>
-				
-		<div class="footer-do-site">
-				<ul class="menu-vertical-ul">
-						<li class="menu-vertical-li">
-							<a href="/PI/html/sobre.html" class="menu-vertical-li-a-titulo"><b>Sobre o Projeto</b></a>
-						</li>
-						<li class="menu-vertical-li">
-							<a href="/PI/html/sobre.html" class="menu-vertical-li-a">Objetivo</a>
-						</li>
-						<li class="menu-vertical-li">
-							<a href="/PI/html/sobre.html" class="menu-vertical-li-a">Introdução</a>
-						</li>
-				</ul>
-				<ul class="menu-vertical-ul">
-					<li class="menu-vertical-li">
-						<a href="/PI/html/integrantes.html" class="menu-vertical-li-a-titulo"><b>Integrantes</b></a>
-					</li>
-					<li class="menu-vertical-li">
-						<a href="/PI/html/sintegrantes.html" class="menu-vertical-li-a">A equipe</a>
-					</li>
-				</ul>
-				<ul class="menu-vertical-ul">
-					<li class="menu-vertical-li">
-						<a href="/PI/html/calendario.html" class="menu-vertical-li-a-titulo"><b>Calendário</b></a>
-					</li>
-					<li class="menu-vertical-li">
-						<a href="/PI/html/calendario.html" class="menu-vertical-li-a">Confira as datas</a>
-					</li>
-			</ul>
-				<ul class="menu-vertical-ul">
-						<li class="menu-vertical-li">
-							<a href="/PI/html/contato.html" class="menu-vertical-li-a-titulo"><b>Contato</b></a>
-						</li>
-						<li class="menu-vertical-li">
-							<a href="/PI/html/contato.html" class="menu-vertical-li-a">Entre em contato</a>
-						</li>
-				</ul>
-		</div>
-		<div class="copy-do-site">Projeto Interdisciplinar 6A &copy; 2019.</span>
-	</div>
-	</body>
-</html>
+<div class="tabela-entrega">
+  <h1 class="titulo-calendario">Calendário de Entregas</h1>
+  <table class="tabela-table">
+    <tr class="tabela-table-tr">
+      <th class="tabela-table-tr-th">ID</th>
+      <th class="tabela-table-tr-th">Entrega</th>
+      <th class="tabela-table-tr-th">Meio</th>
+      <th class="tabela-table-tr-th">Data</th>
+    </tr>
+    <tr class="tabela-table-tr">
+      <td class="tabela-table-tr-td">1</td>
+      <td class="tabela-table-tr-td">Criação de uma pasta no Google Drive e compartilhá-la com o professor e com os
+        demais membros do grupo.</td>
+      <td class="tabela-table-tr-td">Enviar o link por e-mail.</td>
+      <td class="tabela-table-tr-td">20/02/2019</td>
+    </tr>
+    <tr class="tabela-table-tr">
+      <td class="tabela-table-tr-td">2</td>
+      <td class="tabela-table-tr-td">Script SQL para criação da base. A base deve retratar exatamente aquilo contido no
+        DER da Figura 2.</td>
+      <td class="tabela-table-tr-td">Postagem do arquivo.sql no Google Drive.</td>
+      <td class="tabela-table-tr-td">27/02/2019</td>
+    </tr>
+    <tr class="tabela-table-tr">
+      <td class="tabela-table-tr-td">3</td>
+      <td class="tabela-table-tr-td">Interface gráfica conforme Figura 1. Somente a interface gráfica, não sendo
+        necessária a implementação
+        das funcionalidades. Não é permitido o uso de ferarmentas de geração de código (como Netbeans ou qualquer
+        outra).
+      </td>
+      <td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
+      <td class="tabela-table-tr-td">13/03/2019</td>
+    </tr>
+    <tr class="tabela-table-tr">
+      <td class="tabela-table-tr-td">4</td>
+      <td class="tabela-table-tr-td">Código em Java implementando Socket respondendo um simples texto "Hello World!" na
+        tela do navegador
+        do cliente.
+      </td>
+      <td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
+      <td class="tabela-table-tr-td">27/03/2019</td>
+    </tr>
+    <tr class="tabela-table-tr">
+      <td class="tabela-table-tr-td">5</td>
+      <td class="tabela-table-tr-td">Código em Java implementando Socket devolvendo o arquivo buscado pelo cliente. Não
+        é necessário
+        implementar Threads.
+      </td>
+      <td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
+      <td class="tabela-table-tr-td">03/04/2019</td>
+    </tr>
+    <tr class="tabela-table-tr">
+      <td class="tabela-table-tr-td">6</td>
+      <td class="tabela-table-tr-td">Código em Java implementando Socket devolvendo o arquivo buscado pelo cliente.
+        Agora, deve ser
+        implementando em Threads.
+      </td>
+      <td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
+      <td class="tabela-table-tr-td">17/04/2019</td>
+    </tr>
+    <tr class="tabela-table-tr">
+      <td class="tabela-table-tr-td">7</td>
+      <td class="tabela-table-tr-td">Implementar a diferenciação dos tipos de métodos HTTP utilizados na requisição do
+        cliente: GET e HEAD.
+      </td>
+      <td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
+      <td class="tabela-table-tr-td">24/04/2019</td>
+    </tr>
+    <tr class="tabela-table-tr">
+      <td class="tabela-table-tr-td">8</td>
+      <td class="tabela-table-tr-td">Implementar o registro dos Logs de cada arquivo acessado pelo cliente.
+      </td>
+      <td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
+      <td class="tabela-table-tr-td">08/05/2019</td>
+    </tr>
+    <tr class="tabela-table-tr">
+      <td class="tabela-table-tr-td">9</td>
+      <td class="tabela-table-tr-td">Implementar as mensagens de erros, deverá registrar nos Logs também.
+      </td>
+      <td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
+      <td class="tabela-table-tr-td">15/05/2019</td>
+    </tr>
+    <tr class="tabela-table-tr">
+      <td class="tabela-table-tr-td">10</td>
+      <td class="tabela-table-tr-td">Implementar os relatórios para serem apresentado ao administrador do sistema.
+      </td>
+      <td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
+      <td class="tabela-table-tr-td">22/05/2019</td>
+    </tr>
+    <tr class="tabela-table-tr">
+      <td class="tabela-table-tr-td">11</td>
+      <td class="tabela-table-tr-td">Integração entre a interface gráfica implementada na entrega 3 e o servidor.
+      </td>
+      <td class="tabela-table-tr-td">Postagem dos arquivos .java no Google Drive.</td>
+      <td class="tabela-table-tr-td">29/05/2019</td>
+    </tr>
+    <tr class="tabela-table-tr">
+      <td class="tabela-table-tr-td">12</td>
+      <td class="tabela-table-tr-td">Aula de acompanhamento e plantão de dúvidas.
+      </td>
+      <td class="tabela-table-tr-td">Sem entrega.</td>
+      <td class="tabela-table-tr-td">05/06/2019</td>
+    </tr>
+    <tr class="tabela-table-tr">
+      <td class="tabela-table-tr-td">13</td>
+      <td class="tabela-table-tr-td">Apresentações preliminares ao professor. 15 minutos para cada grupo. (Apresentação
+        eliminatória, o
+        professor decide aqui se o grupo vai à banca ou não).
+      </td>
+      <td class="tabela-table-tr-td">-</td>
+      <td class="tabela-table-tr-td">12/06/2019</td>
+    </tr>
+    <tr class="tabela-table-tr">
+      <td class="tabela-table-tr-td">14</td>
+      <td class="tabela-table-tr-td">Banca
+      </td>
+      <td class="tabela-table-tr-td">Apresentação para a banca de professores.</td>
+      <td class="tabela-table-tr-td">19/06/2019</td>
+    </tr>
+  </table>
+</div>
