@@ -6,11 +6,11 @@ import br.com.pi.dao.ServidorDAO;
 import br.com.pi.model.ServidorWeb;
 
 
-public class ServidorService {
+public class ClienteService {
 
 	ServidorDAO objectDAO;
 	
-	public ServidorService() throws SQLException {
+	public ClienteService() throws SQLException {
 		 ServidorDAO objectDAO = new ServidorDAO();
 		   this.objectDAO = objectDAO;
 	   }

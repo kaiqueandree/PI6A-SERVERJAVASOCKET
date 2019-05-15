@@ -23,8 +23,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.StringTokenizer;
 import java.util.logging.FileHandler;
-import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
 
 public class ServidorWeb {
 
@@ -37,7 +35,6 @@ public class ServidorWeb {
 	private Socket cliente;
 	private PrintWriter envia;
 	private ClienteHandler handler;
-	private Logger logger;
 	private FileHandler fh;
 
 	public ServidorWeb(int codigo, String status, Timestamp dataAcesso) {
@@ -56,16 +53,6 @@ public class ServidorWeb {
 		servidor = new ServerSocket(8080);
 		System.out.println("Servidor Iniciado.");
 
-		logger = Logger.getLogger("MyLog");
-		Date date = new Date();
-		String formato = new SimpleDateFormat("ddmmyyyy.HHmmss").format(date);
-		String logFileName = "servidorWeb_" + formato;
-		fh = new FileHandler("C:/Users/lluka/Documents/USJT/LogsProject/" + logFileName + ".log");
-		logger.addHandler(fh);
-		SimpleFormatter formatter = new SimpleFormatter();
-		fh.setFormatter(formatter);
-
-		logger.info("Servidor Iniciado às " + date);
 
 	}
 
@@ -75,21 +62,19 @@ public class ServidorWeb {
 			try {
 				cliente = servidor.accept();
 				handler = new ClienteHandler(cliente);
-				System.out.println("Conectado à " + cliente.getRemoteSocketAddress());
+				System.out.println("Conectado A� " + cliente.getRemoteSocketAddress());
 
 			} catch (SocketException e) {
 				System.out.println("Servidor parado!");
 			}
 
-			logger.info("Conectado à " + cliente.getRemoteSocketAddress());
 			OutputStream saida = cliente.getOutputStream();
 			BufferedReader in = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
 			PrintStream out = new PrintStream(new BufferedOutputStream(cliente.getOutputStream()));
 
 			String request = in.readLine();
 			System.out.println(request);
-			logger.info(request);
-
+			
 			String arquivo = "";
 			StringTokenizer st = new StringTokenizer(request);
 
@@ -187,8 +172,7 @@ public class ServidorWeb {
 			saida.println(Data);
 
 			System.out.println(Data);
-			logger.info(Data);
-
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -227,43 +211,43 @@ public class ServidorWeb {
 	}
 
 	// Lista o valor de todas as a��es uma a uma para gerar a lista.
-	public ArrayList<ServidorWeb> listarAcoes(Connection conn) throws SQLException {
-		String sqlSelect = "SELECT id,hora_data,acao FROM LogServidor";
-		ArrayList<ServidorWeb> lista = new ArrayList<>();
-		try (PreparedStatement stm = conn.prepareStatement(sqlSelect); ResultSet rs = stm.executeQuery();) {
-			while (rs.next()) {
-				ServidorWeb servidor = new ServidorWeb(codigo, status, dataAcesso);
-				servidor.setCodigo(rs.getInt("id"));
-				servidor.setDataAcesso(rs.getTimestamp("hora_data"));
-				servidor.setStatus(rs.getString("acao"));
-				lista.add(servidor);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return lista;
-	}
-
-	// Separa particularmente acao por acao para cada objeto do array.
-	public void carregaAcoes(Connection conn) throws SQLException {
-		String sqlSelect = "SELECT hora_data,acao FROM LogServidor WHERE id=?";
-		try (PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
-			stm.setInt(1, codigo);
-			try (ResultSet rs = stm.executeQuery();) {
-				if (rs.next()) {
-					dataAcesso = rs.getTimestamp("hora_data");
-					status = rs.getString("acao");
-				} else {
-					dataAcesso = null;
-					status = null;
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+//	public ArrayList<ServidorWeb> listarAcoes(Connection conn) throws SQLException {
+//		String sqlSelect = "SELECT id,hora_data,acao FROM LogServidor";
+//		ArrayList<ServidorWeb> lista = new ArrayList<>();
+//		try (PreparedStatement stm = conn.prepareStatement(sqlSelect); ResultSet rs = stm.executeQuery();) {
+//			while (rs.next()) {
+//				ServidorWeb servidor = new ServidorWeb(codigo, status, dataAcesso);
+//				servidor.setCodigo(rs.getInt("id"));
+//				servidor.setDataAcesso(rs.getTimestamp("hora_data"));
+//				servidor.setStatus(rs.getString("acao"));
+//				lista.add(servidor);
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		return lista;
+//	}
+//
+//	// Separa particularmente acao por acao para cada objeto do array.
+//	public void carregaAcoes(Connection conn) throws SQLException {
+//		String sqlSelect = "SELECT hora_data,acao FROM LogServidor WHERE id=?";
+//		try (PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+//			stm.setInt(1, codigo);
+//			try (ResultSet rs = stm.executeQuery();) {
+//				if (rs.next()) {
+//					dataAcesso = rs.getTimestamp("hora_data");
+//					status = rs.getString("acao");
+//				} else {
+//					dataAcesso = null;
+//					status = null;
+//				}
+//			} catch (SQLException e) {
+//				e.printStackTrace();
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 	public void parar() throws IOException {
 

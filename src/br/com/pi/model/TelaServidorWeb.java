@@ -58,7 +58,7 @@ public class TelaServidorWeb extends JFrame {
 		lblAtivo.setBounds(100, 65, 150, 20);
 
 		// Label Eventos
-		lblEventos = new JLabel("Últimos eventos: ");
+		lblEventos = new JLabel("Ultimos eventos: ");
 		lblEventos.setFont(fonte2);
 		lblEventos.setBounds(10, 120, 150, 20);
 
@@ -68,13 +68,13 @@ public class TelaServidorWeb extends JFrame {
 		painel.setBackground(Color.WHITE);
 		String actions = "";
 
-		for (String action : carregaAcoes(conn)) {
-			lblAcoes = new JLabel(action + "\n");
-			lblAcoes.setBounds(0, 0, 100, 20);
-			lblAcoes.setFont(fonte3);
-			painel.add(lblAcoes);
-
-		}
+//		for (String action : carregaAcoes(conn)) {
+//			lblAcoes = new JLabel(action + "\n");
+//			lblAcoes.setBounds(0, 0, 100, 20);
+//			lblAcoes.setFont(fonte3);
+//			painel.add(lblAcoes);
+//
+//		}
 
 		// Botao Iniciar
 		btnIniciar = new JButton("Iniciar");
@@ -102,7 +102,7 @@ public class TelaServidorWeb extends JFrame {
 							serv.iniciar();
 							serv.setDataAcesso(new Timestamp(new Date().getTime()));
 							serv.setStatus("Iniciado");
-							service.inserir(serv);
+							//service.inserir(serv);
 							serv.clienteListener();
 							serv.setAtivo(true);
 
@@ -111,10 +111,12 @@ public class TelaServidorWeb extends JFrame {
 							lblAtivo.setText("Parado");
 							serv.setAtivo(false);
 							ex.printStackTrace();
-						} catch (SQLException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						} catch (NullPointerException e1) {
+					} 
+//								catch (SQLException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						} 
+							catch (NullPointerException e1) {
 							e1.printStackTrace();
 						}
 					}
@@ -198,21 +200,21 @@ public class TelaServidorWeb extends JFrame {
 
 	}
 
-	// Carrega as a��es corretas para cada linha simulada no banco de dados.
-	public ArrayList<String> carregaAcoes(Connection conn) throws SQLException {
-
-		ServidorWeb servidor = new ServidorWeb(0, null, null);
-		ArrayList<String> Acoes = new ArrayList<>();
-		servidor.carregaAcoes(conn);
-		ArrayList<ServidorWeb> lista = servidor.listarAcoes(conn);
-		for (int i = 0; i < lista.size(); i++) {
-			Acoes.add("Servidor " + lista.get(i).getStatus() + " às " + converteDatas(lista.get(i).getDataAcesso())
-					+ "\n");
-		}
-		// System.out.println(Acoes);
-		return Acoes;
-
-	}
+//	// Carrega as a��es corretas para cada linha simulada no banco de dados.
+//	public ArrayList<String> carregaAcoes(Connection conn) throws SQLException {
+//
+//		ServidorWeb servidor = new ServidorWeb(0, null, null);
+//		ArrayList<String> Acoes = new ArrayList<>();
+//		servidor.carregaAcoes(conn);
+//		ArrayList<ServidorWeb> lista = servidor.listarAcoes(conn);
+//		for (int i = 0; i < lista.size(); i++) {
+//			Acoes.add("Servidor " + lista.get(i).getStatus() + " às " + converteDatas(lista.get(i).getDataAcesso())
+//					+ "\n");
+//		}
+//		// System.out.println(Acoes);
+//		return Acoes;
+//
+//	}
 
 	// Metodo Responsabel por converter as datas para o padrao Brasileiro.
 	public String converteDatas(Timestamp t) {
@@ -223,12 +225,12 @@ public class TelaServidorWeb extends JFrame {
 
 	public static void main(String[] args) {
 
-		ConnectionFactory cf = new ConnectionFactory();
+	//	ConnectionFactory cf = new ConnectionFactory();
 
 		try {
-			Connection conn = cf.getConnection();
+		//	Connection conn = cf.getConnection();
 
-			TelaServidorWeb tela = new TelaServidorWeb(conn);
+			TelaServidorWeb tela = new TelaServidorWeb(null);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
