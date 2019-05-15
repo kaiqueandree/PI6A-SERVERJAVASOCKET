@@ -2,20 +2,20 @@ package br.com.pi.service;
 
 import java.sql.SQLException;
 
-import br.com.pi.dao.ServidorDAO;
-import br.com.pi.model.ServidorWeb;
+import br.com.pi.dao.ClienteDAO;
+import br.com.pi.model.ClienteWeb;
 
 
 public class ClienteService {
 
-	ServidorDAO objectDAO;
+	ClienteDAO objectDAO;
 	
 	public ClienteService() throws SQLException {
-		 ServidorDAO objectDAO = new ServidorDAO();
+		 ClienteDAO objectDAO = new ClienteDAO();
 		   this.objectDAO = objectDAO;
 	   }
 		
-		public void inserir(ServidorWeb serv) throws SQLException {
+		public void inserir(ClienteWeb serv) throws SQLException {
 			objectDAO.inserir(serv);
 		}
 	

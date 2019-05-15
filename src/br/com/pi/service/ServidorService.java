@@ -18,6 +18,5 @@ public class ServidorService {
 		public void inserir(ServidorWeb serv) throws SQLException {
 			objectDAO.inserir(serv);
 		}
-	
-	
+
 }
