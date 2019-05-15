@@ -7,18 +7,15 @@ import java.sql.SQLException;
 import br.com.pi.model.ServidorWeb;
 
 
-
-
-
 public class ServidorDAO {
 	
 	Connection conn;
 	
-//	public ServidorDAO() throws SQLException {
-//		ConnectionFactory cf = new ConnectionFactory();
-//		conn = cf.getConnection();
-//	
-//	}
+	public ServidorDAO() throws SQLException {
+		ConnectionFactory cf = new ConnectionFactory();
+		conn = cf.getConnection();
+	
+	}
 	
 
 	public void inserir(ServidorWeb serv) throws SQLException{
@@ -36,7 +33,4 @@ public class ServidorDAO {
 	         conn.rollback();
 	      }
 	   }
-	
-
-
 }
