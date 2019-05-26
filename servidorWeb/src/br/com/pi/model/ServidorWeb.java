@@ -2,6 +2,7 @@ package br.com.pi.model;
 
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -25,6 +26,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.StringTokenizer;
 
+import javax.sound.midi.Soundbank;
+
 import br.com.pi.service.ClienteService;
 
 public class ServidorWeb {
@@ -40,6 +43,7 @@ public class ServidorWeb {
 	private ClienteHandler handler;
 	private ClienteWeb cliWeb;
 	private ClienteService cliServ;
+	private File file;
 
 	public ServidorWeb(int codigo, String status, Timestamp dataAcesso) {
 		this.codigo = codigo;
@@ -51,11 +55,21 @@ public class ServidorWeb {
 
 	public ServidorWeb(TelaServidorWeb frame) {
 		this.frame = frame;
+		file = new File("../../../../PI/");
 	}
+	
+	
 
 	public void iniciar() throws IOException {
 		servidor = new ServerSocket(8080);
 		System.out.println("Servidor Iniciado.");
+		
+		
+	        
+	        try {
+	        	System.out.println(file.getCanonicalPath());
+	        }
+	        catch(IOException e) {}
 
 	}
 
@@ -135,15 +149,18 @@ public class ServidorWeb {
 				String type = "text/plain";
 				if (arquivo.endsWith(".html") || arquivo.endsWith(".htm")) {
 					type = "text/html";
-					
+					System.out.println("enviando texto");
 				} else if (arquivo.endsWith(".css")) {
 					type = "text/css";
+					System.out.println("enviando css");
 				}  else if (arquivo.endsWith(".js")) {
 					type = "text/javascript";
+					
 				}
 
 				else if (arquivo.endsWith(".jpg") || arquivo.endsWith(".jpeg")) {
 					type = "image/jpeg";
+					System.out.println("enviando jpeg");
 				}
 				
 				else if (arquivo.endsWith(".png")) {
@@ -161,6 +178,8 @@ public class ServidorWeb {
 				}
                 String resp = "HTTP/1.1 200 OK\r\nContent-type: " + type + "\r\n\r\n";
 				out.print(resp);
+				System.out.println("\n"+resp);
+				
 				
 				cliServ = new ClienteService();
 				Date data = new Date();
@@ -175,8 +194,10 @@ public class ServidorWeb {
 				
 				byte[] a = new byte[4096];
 				int i;
+				System.out.println("Teste byte...");
 				while ((i = f.read(a)) > 0) {
 					out.write(a, 0, i);
+					System.out.println("Enviando arquivo...");
 				}
 
 				out.close();
@@ -186,7 +207,7 @@ public class ServidorWeb {
 
 				out.println("HTTP/1.1 404 Not Found\r\n" + "Content-type: text/html\r\n\r\n" + "<html>" + "<head>"
 						+ "</head>"
-						+ "<body><img src=\"404.jpg\" style=\"width:500px; height:400px\" title=\"error_404\" alt=\"error_404\">"
+						+ "<body><img src=" + file.getCanonicalPath() + "\404.jpg\" style=\"width:500px; height:400px\" title=\"error_404\" alt=\"error_404\">"
 						+ "</body></html>\n");
 				
 				cliServ = new ClienteService();

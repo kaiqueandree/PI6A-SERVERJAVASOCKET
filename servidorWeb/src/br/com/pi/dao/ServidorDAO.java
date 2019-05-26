@@ -2,8 +2,11 @@ package br.com.pi.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
+import br.com.pi.model.LogAcesso;
 import br.com.pi.model.ServidorWeb;
 
 
@@ -33,4 +36,7 @@ public class ServidorDAO {
 	         conn.rollback();
 	      }
 	   }
+	
+		
+	
 }
