@@ -2,6 +2,7 @@ package br.com.pi.model;
 
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -17,6 +18,7 @@ import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
+import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,6 +29,7 @@ import java.util.Date;
 import java.util.StringTokenizer;
 
 import br.com.pi.model.utils.Relatorio;
+import br.com.pi.model.utils.RelatorioGenerator;
 import br.com.pi.service.ClienteService;
 
 public class ServidorWeb {
@@ -43,7 +46,7 @@ public class ServidorWeb {
 	private ClienteWeb cliWeb;
 	private ClienteService cliServ;
 	private File file;
-	private Relatorio relatorios;
+	private RelatorioGenerator relatorios;
 
 	public ServidorWeb(int codigo, String status, Timestamp dataAcesso) {
 		this.codigo = codigo;
@@ -90,6 +93,7 @@ public class ServidorWeb {
 			BufferedReader in = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
 			PrintStream out = new PrintStream(new BufferedOutputStream(cliente.getOutputStream()));
 			String request;
+			relatorios = new RelatorioGenerator();
 			
 			request = in.readLine();
 			try {
@@ -128,11 +132,8 @@ public class ServidorWeb {
 					Timestamp ts=new Timestamp(data.getTime());
 					String arq = request.substring(4);
 					arq = arq.substring(0,arq.indexOf(" "));
-					
-					
 					cliWeb =  new ClienteWeb(arq, "GET", "127.0.0.1", 501, ts);
 					cliServ.inserir(cliWeb);
-					
 					
 				} else {
 					throw new FileNotFoundException();
@@ -145,9 +146,6 @@ public class ServidorWeb {
 					System.out.println("Página inicial");
 				}
 				
-				if (arquivo.contains("relatorios.html")) {
-					   relatorios.consulta();
-					}
 
 				while (arquivo.indexOf("/") == 0) {
 					arquivo = arquivo.substring(1);
@@ -155,7 +153,9 @@ public class ServidorWeb {
 				}
 
 				InputStream f = new FileInputStream(arquivo);
-
+                 System.out.println("Arquivo: " + arquivo);
+                 System.out.println("FileInputStream: " + f);
+                 
 				String type = "text/plain";
 				if (arquivo.endsWith(".html") || arquivo.endsWith(".htm")) {
 					type = "text/html";
@@ -201,16 +201,26 @@ public class ServidorWeb {
 				cliWeb =  new ClienteWeb(arq, "GET", "127.0.0.1", 200, ts);
 				cliServ.inserir(cliWeb);
 				
-				
-				byte[] a = new byte[4096];
 				int i;
+				if(arquivo.contains("relatorio.html")) {
+					
+					byte[] b = new byte[4096];
+					System.out.println("Teste byte...");
+					InputStream stream = new ByteArrayInputStream(relatorios.GenerateFile().getBytes(StandardCharsets.UTF_8));
+					while ((i = stream.read(b)) > 0) {
+						out.write(b, 0, i);
+					}
+					out.close();
+					} else {
+				byte[] a = new byte[4096];
 				System.out.println("Teste byte...");
+
 				while ((i = f.read(a)) > 0) {
 					out.write(a, 0, i);
-					System.out.println("Enviando arquivo...");
 				}
 
 				out.close();
+				}
 			}
 			
 

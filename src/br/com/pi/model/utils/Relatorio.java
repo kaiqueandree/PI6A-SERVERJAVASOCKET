@@ -8,12 +8,13 @@ public abstract class Relatorio {
 	RelatorioGenerator relGerador;
 	
 	public Relatorio() throws SQLException {
-		relGerador = new RelatorioGenerator();
+		
 	}
-	public byte[] consulta() throws SQLException, IOException {
+	public  String consulta() throws SQLException, IOException 
+	{
+		return null;
+	}
 
-	return relGerador.GenerateFile();	 
-	}
 	
 	
 }
