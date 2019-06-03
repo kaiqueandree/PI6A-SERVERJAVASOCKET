@@ -29,5 +29,35 @@ public class ClienteService {
 			return objectDAO.nRequisicoes(req);
 		}
 	
+		public ArrayList<LogAcesso> horaPicoAcesso() throws SQLException {
+			return objectDAO.horaPicoAcesso();
+		}
+		
+		public ArrayList<LogAcesso> IpsAcesso() throws SQLException {
+			return objectDAO.IpsAcesso();
+		}
+		
+		public ArrayList<LogAcesso> nRequisicoes404() throws SQLException {
+			return objectDAO.nRequisicoes404();
+		}
+		
+		public ArrayList<LogAcesso> requesicaoPorDia() throws SQLException {
+			return objectDAO.requesicaoPorDia();
+		}
+		
+		public ArrayList<LogAcesso> requesicaoPorMes() throws SQLException {
+			return objectDAO.requesicaoPorMes();
+		}
+		
+		public ArrayList<LogAcesso> ipsDistintos() throws SQLException {
+			return objectDAO.ipsDistintos();
+		}
+		
+		public ArrayList<LogAcesso> statusCode() throws SQLException {
+			return objectDAO.StatusCode();
+		}
+		
+		
+		
 	
 }

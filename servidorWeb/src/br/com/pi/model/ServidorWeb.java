@@ -26,8 +26,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.StringTokenizer;
 
-import javax.sound.midi.Soundbank;
-
+import br.com.pi.model.utils.Relatorio;
 import br.com.pi.service.ClienteService;
 
 public class ServidorWeb {
@@ -44,6 +43,7 @@ public class ServidorWeb {
 	private ClienteWeb cliWeb;
 	private ClienteService cliServ;
 	private File file;
+	private Relatorio relatorios;
 
 	public ServidorWeb(int codigo, String status, Timestamp dataAcesso) {
 		this.codigo = codigo;
@@ -80,26 +80,32 @@ public class ServidorWeb {
 				cliente = servidor.accept();
 				handler = new ClienteHandler(cliente);
 				System.out.println("Conectado à " + cliente.getRemoteSocketAddress());
+				OutputStream saida = cliente.getOutputStream();
 
 			} catch (SocketException e) {
 				System.out.println("Servidor parado!");
-			}
-
-
-			OutputStream saida = cliente.getOutputStream();
+			} 
+			
+			
 			BufferedReader in = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
 			PrintStream out = new PrintStream(new BufferedOutputStream(cliente.getOutputStream()));
-
-			String request = in.readLine();
-			System.out.println("Teste: " + request);
+			String request;
 			
-
-			String arquivo = "";
-			StringTokenizer st = new StringTokenizer(request);
-
+			request = in.readLine();
 			try {
+				
 
-				if (st.hasMoreElements()
+				
+				
+				
+				System.out.println("Teste: " + request);
+				
+
+				String arquivo = "";
+				
+			StringTokenizer st = new StringTokenizer(request);
+			
+			if (st.hasMoreElements()
 						&& (st.nextToken().equalsIgnoreCase("GET") || st.nextToken().equalsIgnoreCase("HEAD"))
 						&& st.hasMoreElements()) {
 					arquivo = st.nextToken();
@@ -138,6 +144,10 @@ public class ServidorWeb {
 					arquivo += "index.html";
 					System.out.println("Página inicial");
 				}
+				
+				if (arquivo.contains("relatorios.html")) {
+					   relatorios.consulta();
+					}
 
 				while (arquivo.indexOf("/") == 0) {
 					arquivo = arquivo.substring(1);
@@ -202,6 +212,7 @@ public class ServidorWeb {
 
 				out.close();
 			}
+			
 
 			catch (FileNotFoundException x) {
 
@@ -217,11 +228,15 @@ public class ServidorWeb {
 				arq = arq.substring(0,arq.indexOf(" "));
 				
 				
-				cliWeb =  new ClienteWeb(arq, "GET", "127.0.0.1", 404, ts);
+				cliWeb =  new ClienteWeb(arq, "GET", "127.0.0.1", 200, ts);
 				cliServ.inserir(cliWeb);
 				
 				out.close();
 			}
+			catch(NullPointerException ex) {
+				System.out.println("Sem apontamento válido.");
+			}
+		
 		}
 	}
 
@@ -272,7 +287,7 @@ public class ServidorWeb {
 
 	// Lista o valor de todas as acoes uma a uma para gerar a lista.
 	public ArrayList<ServidorWeb> listarAcoes(Connection conn) throws SQLException {
-		String sqlSelect = "SELECT id,hora_data,acao FROM LogServidor";
+		String sqlSelect = "SELECT id,hora_data,acao FROM LogServidor order by hora_data";
 		ArrayList<ServidorWeb> lista = new ArrayList<>();
 		try (PreparedStatement stm = conn.prepareStatement(sqlSelect); ResultSet rs = stm.executeQuery();) {
 			while (rs.next()) {
@@ -320,7 +335,7 @@ public class ServidorWeb {
 	public void reiniciar() throws IOException, InterruptedException {
 
 	     parar();
-	     Thread.sleep(3000);
+	     Thread.sleep(10000);
 	     iniciar();
 	}
 	

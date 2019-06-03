@@ -1,106 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>			
-    	<meta charset="UTF-8" />
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>Projeto Interdisciplinar 6A</title>
-		<link rel="stylesheet" type="text/css" href="../CSS/CSSReset.css"	 />
-		<link rel="stylesheet" type="text/css" href="../CSS/estilo.css"	 />	
-		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />	
-		<link rel="icon" href="../IMGS/server-web-transparente.jpg" />	
-	</head>
-<body style="background-color:white">
-    	<div class="topo-da-pagina">
-			<img src="../IMGS/server-web.jpg"  alt="icon" class="icone-topo">
-			<h1 class="title-projeto">Projeto Interdisciplinar 6A</h1>
-			<ul class="menu-horizontal-ul">
-				<li class="menu-horizontal-ul-li">
-					<a href="/PI/html/index.html" class="menu-horizontal-ul-li-a"><b>Home</b></a>
-				</li>
-				<li class="menu-horizontal-ul-li">
-					<a href="sobre.html" class="menu-horizontal-ul-li-a"><b>Sobre o Projeto</b></a>
-						<ul class="menu-horizontal-ul">
-							<li class="menu-horizontal-ul-li"> 
-								<a href="/PI/html/sobre.html" class="menu-horizontal-ul-li-a"><i>Objetivo</i></a>
-							</li>
-							<li class="menu-horizontal-ul-li">
-								<a href="/PI/html/sobre.html" class="menu-horizontal-ul-li-a"><i>Introdução</i></a>
-							</li>
-						</ul>
-				</li>
-				<li class="menu-horizontal-ul-li">
-					<a href="integrantes.html" class="menu-horizontal-ul-li-a"><b>Integrantes</b></a>
-						<ul class="menu-horizontal-ul">
-							<li class="menu-horizontal-ul-li">
-								<a href="#" class="menu-horizontal-ul-li-a"><i>A equipe</i></a>
-							</li>
-						</ul>
-				</li>
-				<li class="menu-horizontal-ul-li">
-					<a href="/PI/html/calendario.html" class="menu-horizontal-ul-li-a"><b>Calendário</b></a>
-				</li>
-				<li class="menu-horizontal-ul-li">
-					<a href="/PI/html/contato.html" class="menu-horizontal-ul-li-a"><b>Contato</b></a>
-				</li>
-			</ul>
-		</div>
-		<div class="info-projeto">
-			<h1 class="titulo-sobre">Objetivo</h1>
-			<h3 class="titulo-sobre-info">Desenvolver um servidor web HTTP em Java, que atenda às requisições de métodos GET e HEAD. 
-				Este servidor deverá manusear as conexões dos clientes em Threads separadas. Além de apresentar relatórios variados ao administrador do servidor.
-			</h3>
-			<h1 class="titulo-sobre">Introdução</h1>
-			<h3 class="titulo-sobre-info">No universo de hospedagem de conteúdos na Internet, existem três atores principais: o cliente, o servidor e a rede. 
-					O cliente acessa um endereço qualquer, através de um navegador, ou consome algum serviço, como um aplicativo de troca de mensagens. 
-					Enquanto a rede fica responsável pr entregar as requisições do cliente ao servidor e vice-versa. 
-					O cliente, por sua vez, se empenha em receber, interpretar e responder os pedidos dos clientes. Todo esse funcionamento é resumido na Figura 1.
-			</h3>
-			<img src="../IMGS/Figura1.PNG" title="Figura1" alt="Figura1" class="img-sobre-info">
-			<img src="../IMGS/Figura2.PNG" title="Figura2" alt="Figura2" class="img-sobre-info">
-			<h3 class="titulo-sobre-info">No servidor, são necessários softwares que recebem, interpretam e respondam corretamente às requisições dos clientes, entregando o conteúdo solicitado. 
-				Existem diferentes softwares dessa categoria disponíveis no mercado, como o Apache HTTP Server, o NGINX, o Apache Tomcat e muitos outros.
-			</h3>
-		</div>
-		
-		<div class="footer-do-site">
-				<ul class="menu-vertical-ul">
-						<li class="menu-vertical-li">
-							<a href="/PI/html/sobre.html" class="menu-vertical-li-a-titulo"><b>Sobre o Projeto</b></a>
-						</li>
-						<li class="menu-vertical-li">
-							<a href="/PI/html/sobre.html" class="menu-vertical-li-a">Objetivo</a>
-						</li>
-						<li class="menu-vertical-li">
-							<a href="/PI/html/sobre.html" class="menu-vertical-li-a">Introdução</a>
-						</li>
-				</ul>
-				<ul class="menu-vertical-ul">
-					<li class="menu-vertical-li">
-						<a href="/PI/html/integrantes.html" class="menu-vertical-li-a-titulo"><b>Integrantes</b></a>
-					</li>
-					<li class="menu-vertical-li">
-						<a href="/PI/html/integrantes.html" class="menu-vertical-li-a">A equipe</a>
-					</li>
-				</ul>
-				<ul class="menu-vertical-ul">
-					<li class="menu-vertical-li">
-						<a href="/PI/html/calendario.html" class="menu-vertical-li-a-titulo"><b>Calendário</b></a>
-					</li>
-					<li class="menu-vertical-li">
-						<a href="/PI/html/calendario.html" class="menu-vertical-li-a">Confira as datas</a>
-					</li>
-			</ul>
-				<ul class="menu-vertical-ul">
-						<li class="menu-vertical-li">
-							<a href="/PI/html/contato.html" class="menu-vertical-li-a-titulo"><b>Contato</b></a>
-						</li>
-						<li class="menu-vertical-li">
-							<a href="/PI/html/contato.html" class="menu-vertical-li-a">Entre em contato</a>
-						</li>
-				</ul>
-		</div>
-		<div class="copy-do-site">Projeto Interdisciplinar 6A &copy; 2019.</span>
-	</div>
-	</body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Projeto Interdisciplinar 6A</title>
+
+  <!-- Scripts imports -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+
+  <!-- Styles imports -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+  <link rel="icon" href="../IMGS/server-web-transparente.jpg" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+  <div id="header"></div>
+  <h1 class="titulo-sobre">Objetivo</h1>
+  <h3 class="titulo-sobre-info">Desenvolver um servidor web HTTP em Java, que atenda às requisições de métodos GET e
+    HEAD.
+    Este servidor deverá manusear as conexões dos clientes em Threads separadas. Além de apresentar relatórios variados
+    ao administrador do servidor.
+  </h3>
+  <h1 class="titulo-sobre">Introdução</h1>
+  <h3 class="titulo-sobre-info">No universo de hospedagem de conteúdos na Internet, existem três atores principais: o
+    cliente, o servidor e a rede.
+    O cliente acessa um endereço qualquer, através de um navegador, ou consome algum serviço, como um aplicativo de
+    troca de mensagens.
+    Enquanto a rede fica responsável pr entregar as requisições do cliente ao servidor e vice-versa.
+    O cliente, por sua vez, se empenha em receber, interpretar e responder os pedidos dos clientes. Todo esse
+    funcionamento é resumido na Figura 1.
+  </h3>
+  <img src="../IMGS/Figura1.PNG" title="Figura1" alt="Figura1" class="img-sobre-info">
+  <img src="../IMGS/Figura2.PNG" title="Figura2" alt="Figura2" class="img-sobre-info">
+  <h3 class="titulo-sobre-info">No servidor, são necessários softwares que recebem, interpretam e respondam corretamente
+    às requisições dos clientes, entregando o conteúdo solicitado.
+    Existem diferentes softwares dessa categoria disponíveis no mercado, como o Apache HTTP Server, o NGINX, o Apache
+    Tomcat e muitos outros.
+  </h3>
+  <div id="footer"></div>
+</body>
+
 </html>
