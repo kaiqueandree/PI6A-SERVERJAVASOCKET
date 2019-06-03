@@ -1,19 +1,18 @@
 package br.com.pi.model.utils;
 
-import java.util.ArrayList;
-
-import br.com.pi.model.LogAcesso;
+import java.io.IOException;
+import java.sql.SQLException;
 
 public abstract class Relatorio {
 
-	RelatorioAcesso relAcesso;
+	RelatorioGenerator relGerador;
 	
-	public Relatorio() {
-		relAcesso = new RelatorioAcesso();
+	public Relatorio() throws SQLException {
+		relGerador = new RelatorioGenerator();
 	}
-	public void consulta() {
-        relAcesso.consulta();
-       
+	public byte[] consulta() throws SQLException, IOException {
+
+	return relGerador.GenerateFile();	 
 	}
 	
 	

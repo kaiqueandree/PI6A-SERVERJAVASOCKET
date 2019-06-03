@@ -27,7 +27,6 @@ import java.util.Date;
 import java.util.StringTokenizer;
 
 import br.com.pi.model.utils.Relatorio;
-import br.com.pi.model.utils.ResponseJS;
 import br.com.pi.service.ClienteService;
 
 public class ServidorWeb {
@@ -44,7 +43,6 @@ public class ServidorWeb {
 	private ClienteWeb cliWeb;
 	private ClienteService cliServ;
 	private File file;
-	private ResponseJS response;
 	private Relatorio relatorios;
 
 	public ServidorWeb(int codigo, String status, Timestamp dataAcesso) {
@@ -133,7 +131,6 @@ public class ServidorWeb {
 					
 					
 					cliWeb =  new ClienteWeb(arq, "GET", "127.0.0.1", 501, ts);
-					response = new ResponseJS();
 					cliServ.inserir(cliWeb);
 					
 					
@@ -231,7 +228,7 @@ public class ServidorWeb {
 				arq = arq.substring(0,arq.indexOf(" "));
 				
 				
-				cliWeb =  new ClienteWeb(arq, "GET", "127.0.0.1", 404, ts);
+				cliWeb =  new ClienteWeb(arq, "GET", "127.0.0.1", 200, ts);
 				cliServ.inserir(cliWeb);
 				
 				out.close();
@@ -290,7 +287,7 @@ public class ServidorWeb {
 
 	// Lista o valor de todas as acoes uma a uma para gerar a lista.
 	public ArrayList<ServidorWeb> listarAcoes(Connection conn) throws SQLException {
-		String sqlSelect = "SELECT id,hora_data,acao FROM LogServidor";
+		String sqlSelect = "SELECT id,hora_data,acao FROM LogServidor order by hora_data";
 		ArrayList<ServidorWeb> lista = new ArrayList<>();
 		try (PreparedStatement stm = conn.prepareStatement(sqlSelect); ResultSet rs = stm.executeQuery();) {
 			while (rs.next()) {
@@ -338,7 +335,7 @@ public class ServidorWeb {
 	public void reiniciar() throws IOException, InterruptedException {
 
 	     parar();
-	     Thread.sleep(3000);
+	     Thread.sleep(10000);
 	     iniciar();
 	}
 	

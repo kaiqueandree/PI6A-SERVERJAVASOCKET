@@ -134,8 +134,9 @@ public class TelaServidorWeb extends JFrame {
 					serv.setDataAcesso(new Timestamp(new Date().getTime()));
 					serv.setStatus("Parado");
 					serv.setAtivo(false);
+					service.inserir(serv);
 
-				} catch (IOException ex) {
+				} catch (IOException | SQLException ex) {
 					btnIniciar.setEnabled(false);
 					btnParar.setEnabled(true);
 					lblAtivo.setText("Iniciado");
