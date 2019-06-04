@@ -1,6 +1,9 @@
-html, body {
+html {
   height: 100%;
   font-size: 11px;
+}
+
+body {
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -21,6 +24,11 @@ html, body {
 }
 
 /* footer */
+
+footer {
+  bottom: 0px;
+  position: relative;
+}
 
 .footer-link {
   color: #eee;
