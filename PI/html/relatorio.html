@@ -20,6 +20,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  <script src="../js/script.js"></script>
   <script src="../../js/relatorios.js"></script>
 
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
@@ -29,529 +30,529 @@
   <link rel="icon" href="../../imgs/server-web-transparente.jpg" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../css/style.css">
-  
+  <link rel="stylesheet" href="../css/style.css">
+
   <script>
-  window.onload = function chartBar() {
+    window.onload = function chartBar() {
 
 
-	  // Arquivos mais acessados
-	  var chartAccess = new CanvasJS.Chart("chartMostAccess", {
-	    animationEnabled: true,
-	    exportEnabled: true,
-	    title: {
-	      text: "Arquivos mais acessados"
-	    },
-	    data: [{
-	      type: "column",
-	      indexLabel: "{label} {y}",
-	      exportEnabled: true,
-	      titleFontColor: "#4F81BC",
-	      dataPoints: [
-	    	   { y: 115 , label: "/PI/html/footer.html", indexLabel: " " },
-		       { y: 115 , label: "/PI/html/header.html", indexLabel: " " },
-		       { y: 110 , label: "/PI/css/style.css", indexLabel: " " },
-		       { y: 75 , label: "/PI/html/sobre.htmls", indexLabel: " " },
-		       { y: 73 , label: "/css/style.css", indexLabel: " " },
-		       { y: 71 , label: "/js/relatorios.js", indexLabel: " " },
-		       { y: 56 , label: "/PI/js/relatorios.js", indexLabel: " " },
-		       { y: 55 , label: "/PI/html/relatorio.html", indexLabel: " " },
-		       { y: 47 , label: "/PI/CSS/CSSReset.css", indexLabel: " " },
-		       { y: 46 , label: "/PI/CSS/estilo.css", indexLabel: " " },
-	       //Dados-pizza
-	      ]
-	    }]
-	  });
-		chartAccess.render();
-		
-		
-	  // Grafico de Area
-	  var chartArea = new CanvasJS.Chart("chartAreaContainer", {
-	    animationEnabled: true,
-	    exportEnabled: true,
-	    title: {
-	      text: "Pico de Requisições Cliente"
-	    },
-	    axisX: {
-	      minimum: new Date(2019, 04 ,20,00,00,0),
-	      maximum: new Date(2019, 05, 05,23,59,59),
-	      valueFormatString: "MMM DD HH:MM"
-	    },
-	    axisY: {
-	      title: "Pico de Requisições",
-	      titleFontColor: "#4F81BC",   
-	    },
-	    data: [{
-	      indexLabelFontColor: "darkSlateGray",
-	      name: "views",
-	      type: "area",
-	      dataPoints: [
-	    	  { x: new Date(2019, 4, 22, 21, 00, 0, 0) , y: 185 },
-		       { x: new Date(2019, 4, 22, 22, 00, 0, 0) , y: 30 },
-		       { x: new Date(2019, 4, 23, 19, 00, 0, 0) , y: 33 },
-		       { x: new Date(2019, 4, 23, 20, 00, 0, 0) , y: 9 },
-		       { x: new Date(2019, 4, 23, 21, 00, 0, 0) , y: 27 },
-		       { x: new Date(2019, 4, 26, 23, 00, 0, 0) , y: 8 },
-		       { x: new Date(2019, 4, 27, 10, 00, 0, 0) , y: 19 },
-		       { x: new Date(2019, 4, 27, 23, 00, 0, 0) , y: 63 },
-		       { x: new Date(2019, 4, 29, 0, 00, 0, 0) , y: 79 },
-		       { x: new Date(2019, 4, 29, 1, 00, 0, 0) , y: 5 },
-		       { x: new Date(2019, 4, 29, 6, 00, 0, 0) , y: 6 },
-		       { x: new Date(2019, 4, 29, 7, 00, 0, 0) , y: 10 },
-		       { x: new Date(2019, 4, 29, 8, 00, 0, 0) , y: 248 },
-		       { x: new Date(2019, 4, 29, 9, 00, 0, 0) , y: 27 },
-		       { x: new Date(2019, 4, 29, 20, 00, 0, 0) , y: 75 },
-		       { x: new Date(2019, 5, 2, 15, 00, 0, 0) , y: 43 },
-		       { x: new Date(2019, 5, 2, 16, 00, 0, 0) , y: 173 },
-		       { x: new Date(2019, 5, 2, 17, 00, 0, 0) , y: 76 },
-		       { x: new Date(2019, 5, 2, 18, 00, 0, 0) , y: 15 },
-		       { x: new Date(2019, 5, 2, 20, 00, 0, 0) , y: 101 },
-		       { x: new Date(2019, 5, 2, 21, 00, 0, 0) , y: 408 },
-		       { x: new Date(2019, 5, 2, 22, 00, 0, 0) , y: 241 },
-		       { x: new Date(2019, 5, 2, 23, 00, 0, 0) , y: 123 },
-		       { x: new Date(2019, 5, 3, 0, 00, 0, 0) , y: 11 },
-	      ]
-	    }]
-	  });
-	  chartArea.render();
-		
-		var ipReqChart = new CanvasJS.Chart("chartIpReq", {
-					animationEnabled: true,
-					 exportEnabled: true,
-					title: {
-	      text: "Ips que mais enviam requisições"
-	        },
-					theme: "theme2",
-					legend: {
-						fontSize: 14
-					},
-					toolTip: {
-						borderThickness: 0,
-						content: "<span style='\"'color: {color};'\"'>{name}</span>: {y} (#percent%)",
-						cornerRadius: 0
-					},
-					data: [
-						{       
-							indexLabelFontColor: "#676464",
-							indexLabelFontSize: 14,
-							legendMarkerType: "square",
-							legendText: "{indexLabel}",
-							showInLegend: true,
-							startAngle:  90,
-							type: "doughnut",
-							dataPoints: [
-								
-								{ y: 1612, name: "127.0.0.1", indexLabel: "127.0.0.1", legendText: "127.0.0.1"},
-							      { y: 220, name: "192.168.0.10", indexLabel: "192.168.0.10", legendText: "192.168.0.10"},
-							]
-						}
-					]
-				});
-				
-				ipReqChart.render();
-				
-				var requestErrorChart = new CanvasJS.Chart("errorChart", {
-					animationEnabled: true,
-					 exportEnabled: true,
-					title: {
-	      text: "Conteúdos que geraram erro 404"
-	        },
-					theme: "theme2",
-					legend: {
-						fontSize: 14
-					},
-					toolTip: {
-						borderThickness: 0,
-						content: "<span style='\"'color: {color};'\"'>{name}</span>: {y} (#percent%)",
-						cornerRadius: 0
-					},
-					data: [
-						{       
-							indexLabelFontColor: "#676564",
-							indexLabelFontSize: 14,
-							legendMarkerType: "square",
-							legendText: "{indexLabel}",
-							showInLegend: true,
-							startAngle:  100,
-							type: "pie",
-							dataPoints: [
-								
-							{ y: 265, name: "/css/style.css", indexLabel: "/css/style.css", legendText: "/css/style.css"},
-	     			  { y: 262, name: "/js/relatorios.js", indexLabel: "/js/relatorios.js", legendText: "/js/relatorios.js"},
-	      	    { y: 75, name: "/PI/html/sobre.htmls", indexLabel: "/PI/html/sobre.htmls", legendText: "/PI/html/sobre.htmls"},
-	            { y: 50, name: "/IMGS/server-web-transparente.jpg", indexLabel: "/IMGS/server-web-transparente.jpg", legendText: "/IMGS/server-web-transparente.jpg"},
-	            { y: 17, name: "/PI/html/relatorios/relatorio.java", indexLabel: "/PI/html/relatorios/relatorio.java", legendText: "/PI/html/relatorios/relatorio.java"},
-							]
-						}
-					]
-				});
-				
-				requestErrorChart.render();
-				
-				
-				var renderArquivosDiaChart = new CanvasJS.Chart("arquivosDiaChart", {
-					animationEnabled: true,
-					 exportEnabled: true,
-					title: {
-	      text: "Total de Requisições/Dia Cliente"
-	        },
-					theme: "theme2",
-					legend: {
-						fontSize: 14
-					},
-					toolTip: {
-						borderThickness: 0,
-						content: "<span style='\"'color: {color};'\"'>{name}</span>: {y}",
-						cornerRadius: 0
-					},
-					data: [
-						{       
-							indexLabelFontColor: "#676564",
-							indexLabelFontSize: 14,
-							legendMarkerType: "square",
-							legendText: "{indexLabel}",
-							showInLegend: true,
-							startAngle:  100,
-							type: "bar",
-							dataPoints: [	
-							{ y: 215, name: "22/05/19", indexLabel: "22/05/19", legendText: "22/05/19"},
-	      { y: 69, name: "23/05/19", indexLabel: "23/05/19", legendText: "23/05/19"},
-	      { y: 8, name: "26/05/19", indexLabel: "26/05/19", legendText: "26/05/19"},
-	      { y: 82, name: "27/05/19", indexLabel: "27/05/19", legendText: "27/05/19"},
-	      { y: 450, name: "29/05/19", indexLabel: "29/05/19", legendText: "29/05/19"},
-	      { y: 1180, name: "02/06/19", indexLabel: "02/06/19", legendText: "02/06/19"},
-	      { y: 108, name: "03/06/19", indexLabel: "03/06/19", legendText: "03/06/19"},
-
-							]
-						}
-					]
-				});
-				
-				renderArquivosDiaChart.render();
-
-				var renderArquivosMesChart = new CanvasJS.Chart("arquivosMesChart", {
-					animationEnabled: true,
-					
-					title: {
-	      text: "Total de Requisições/Mês Cliente"
-	        },
-					theme: "theme2",
-					legend: {
-						fontSize: 14
-					},
-					toolTip: {
-						borderThickness: 0,
-						content: "<span style='\"'color: {color};'\"'>{name}</span>: {y}",
-						cornerRadius: 0
-					},
-					data: [
-						{       
-							indexLabelFontColor: "#676564",
-							indexLabelFontSize: 14,
-							legendMarkerType: "square",
-							legendText: "{indexLabel}",
-							showInLegend: true,
-							startAngle:  100,
-							type: "bar",
-							dataPoints: [	
-							{ y: 824, name: "05/19", indexLabel: "05/19", legendText: "05/19"},
-	            { y: 1311, name: "06/19", indexLabel: "06/19", legendText: "06/19"},
-
-							]
-						}
-					]
-				});
-				
-				renderArquivosMesChart.render();		
-				
-				var IpDistintosChart = new CanvasJS.Chart("IpDistintosChart",
-			{
-				title: {
-					text: "Ips Distintos"
-				},
-				animationEnabled: true,
-				exportEnabled: true,
-				data: [
-				{
-					type: "pyramid",
-					//valueRepresents: "area",
-					indexLabelFontSize: 20,
-					indexLabelFontFamily: "Lucida",
-					dataPoints: [
-					{ y: 1871, name: "127.0.0.1", indexLabel: "127.0.0.1", legendText: "127.0.0.1"},
-	        { y: 280, name: "192.168.0.10", indexLabel: "192.168.0.10", legendText: "192.168.0.10"},
-					]
-				}
-				]
-			});
-			IpDistintosChart.render();
-
-			var servidorAcoesChart = new CanvasJS.Chart("servidorAcoesChart", {
-					animationEnabled: true,
-					 exportEnabled: true,
-					title: {
-	      text: "Eventos do Servidor"
-	        },
-					theme: "theme2",
-					legend: {
-						fontSize: 14
-					},
-					toolTip: {
-						borderThickness: 0,
-						content: "<span style='\"'color: {color};'\"'>{name}</span>: {y} (#percent%)",
-						cornerRadius: 0
-					},
-					data: [
-						{       
-							indexLabelFontColor: "#676464",
-							indexLabelFontSize: 14,
-							legendMarkerType: "square",
-							legendText: "{indexLabel}",
-							showInLegend: true,
-							startAngle:  90,
-							type: "doughnut",
-							dataPoints: [
-								
-							{ y: 220, name: "Iniciado", indexLabel: "Iniciado", legendText: "Iniciado"},
-	            { y: 7, name: "Parado", indexLabel: "Parado", legendText: "Parado"},
-							]
-						}
-					]
-				});
-				
-				servidorAcoesChart.render();
-
-				var statusCodeChart = new CanvasJS.Chart("statusCodeChart", {
-					animationEnabled: true,
-					 exportEnabled: true,
-					title: {
-	      text: "Códigos de Resposta"
-	        },
-					theme: "theme2",
-					legend: {
-						fontSize: 14
-					},
-					toolTip: {
-						borderThickness: 0,
-						content: "<span style='\"'color: {color};'\"'>{name}</span>: {y} (#percent%)",
-						cornerRadius: 0
-					},
-					data: [
-						{       
-							indexLabelFontColor: "#676464",
-							indexLabelFontSize: 14,
-							legendMarkerType: "square",
-							legendText: "{indexLabel}",
-							showInLegend: true,
-							startAngle:  90,
-							type: "pie",
-							dataPoints: [
-								
-							{ y: 1367, name: "200", indexLabel: "200", legendText: "200"},
-	      			{ y: 783, name: "404", indexLabel: "404", legendText: "404"},
-	     				 { y: 65, name: "500", indexLabel: "500", legendText: "500"},
-							]
-						}
-					]
-				});
-				
-				statusCodeChart.render();
+      // Arquivos mais acessados
+      var chartAccess = new CanvasJS.Chart("chartMostAccess", {
+        animationEnabled: true,
+        exportEnabled: true,
+        title: {
+          text: "Arquivos mais acessados"
+        },
+        data: [{
+          type: "column",
+          indexLabel: "{label} {y}",
+          exportEnabled: true,
+          titleFontColor: "#4F81BC",
+          dataPoints: [
+            { y: 115, label: "/PI/html/footer.html", indexLabel: " " },
+            { y: 115, label: "/PI/html/header.html", indexLabel: " " },
+            { y: 110, label: "/PI/css/style.css", indexLabel: " " },
+            { y: 75, label: "/PI/html/sobre.htmls", indexLabel: " " },
+            { y: 73, label: "/css/style.css", indexLabel: " " },
+            { y: 71, label: "/js/relatorios.js", indexLabel: " " },
+            { y: 56, label: "/PI/js/relatorios.js", indexLabel: " " },
+            { y: 55, label: "/PI/html/relatorio.html", indexLabel: " " },
+            { y: 47, label: "/PI/CSS/CSSReset.css", indexLabel: " " },
+            { y: 46, label: "/PI/CSS/estilo.css", indexLabel: " " },
+            //Dados-pizza
+          ]
+        }]
+      });
+      chartAccess.render();
 
 
-				  // Grafico de Area
-	  var chartAccessReq = new CanvasJS.Chart("chartAccessReq", {
-	    animationEnabled: true,
-			exportEnabled: true,
-			colorSet: "greenShades",
-	    title: {
-	      text: "Pico de Ações Servidor"
-	    },
-	    axisX: {
-	      minimum: new Date(2019, 02 ,05,00,00,0),
-	      maximum: new Date(2019, 05, 05,23,59,59),
-	      valueFormatString: "MMM DD HH:MM"
-	    },
-	    axisY: {
-	      title: "Pico de Requisições Servidor",
-	      titleFontColor: "#4F81BC",   
-	    },
-	    data: [{
-	      indexLabelFontColor: "darkSlateGray",
-	      name: "views",
-	      type: "area",
-	      dataPoints: [
-				{ x: new Date(2019, 2, 6, 0, 00, 0, 0) , y: 2 },
-	       { x: new Date(2019, 3, 6, 23, 00, 0, 0) , y: 2 },
-	       { x: new Date(2019, 3, 7, 13, 00, 0, 0) , y: 1 },
-	       { x: new Date(2019, 3, 7, 14, 00, 0, 0) , y: 5 },
-	       { x: new Date(2019, 3, 7, 16, 00, 0, 0) , y: 3 },
-	       { x: new Date(2019, 3, 7, 18, 00, 0, 0) , y: 6 },
-	       { x: new Date(2019, 3, 17, 20, 00, 0, 0) , y: 1 },
-	       { x: new Date(2019, 3, 17, 21, 00, 0, 0) , y: 7 },
-	       { x: new Date(2019, 3, 21, 20, 00, 0, 0) , y: 1 },
-	       { x: new Date(2019, 3, 29, 2, 00, 0, 0) , y: 19 },
-	       { x: new Date(2019, 3, 29, 11, 00, 0, 0) , y: 3 },
-	       { x: new Date(2019, 4, 8, 17, 00, 0, 0) , y: 5 },
-	       { x: new Date(2019, 4, 11, 20, 00, 0, 0) , y: 1 },
-	       { x: new Date(2019, 4, 11, 21, 00, 0, 0) , y: 25 },
-	       { x: new Date(2019, 4, 11, 22, 00, 0, 0) , y: 13 },
-	       { x: new Date(2019, 4, 11, 23, 00, 0, 0) , y: 6 },
-	       { x: new Date(2019, 4, 15, 1, 00, 0, 0) , y: 4 },
-	       { x: new Date(2019, 4, 15, 2, 00, 0, 0) , y: 2 },
-	       { x: new Date(2019, 4, 15, 9, 00, 0, 0) , y: 1 },
-	       { x: new Date(2019, 4, 15, 14, 00, 0, 0) , y: 3 },
-	       { x: new Date(2019, 4, 15, 15, 00, 0, 0) , y: 11 },
-	       { x: new Date(2019, 4, 15, 16, 00, 0, 0) , y: 1 },
-	       { x: new Date(2019, 4, 22, 0, 00, 0, 0) , y: 5 },
-	       { x: new Date(2019, 4, 22, 1, 00, 0, 0) , y: 1 },
-	       { x: new Date(2019, 4, 22, 21, 00, 0, 0) , y: 13 },
-	       { x: new Date(2019, 4, 22, 22, 00, 0, 0) , y: 2 },
-	       { x: new Date(2019, 4, 23, 19, 00, 0, 0) , y: 7 },
-	       { x: new Date(2019, 4, 23, 20, 00, 0, 0) , y: 2 },
-	       { x: new Date(2019, 4, 23, 21, 00, 0, 0) , y: 5 },
-	       { x: new Date(2019, 4, 26, 23, 00, 0, 0) , y: 1 },
-	       { x: new Date(2019, 4, 27, 10, 00, 0, 0) , y: 1 },
-	       { x: new Date(2019, 4, 27, 23, 00, 0, 0) , y: 8 },
-	       { x: new Date(2019, 4, 29, 0, 00, 0, 0) , y: 6 },
-	       { x: new Date(2019, 4, 29, 1, 00, 0, 0) , y: 1 },
-	       { x: new Date(2019, 4, 29, 6, 00, 0, 0) , y: 1 },
-	       { x: new Date(2019, 4, 29, 8, 00, 0, 0) , y: 9 },
-	       { x: new Date(2019, 4, 29, 9, 00, 0, 0) , y: 5 },
-	       { x: new Date(2019, 4, 29, 20, 00, 0, 0) , y: 3 },
-	       { x: new Date(2019, 5, 2, 15, 00, 0, 0) , y: 1 },
-	       { x: new Date(2019, 5, 2, 16, 00, 0, 0) , y: 2 },
-	       { x: new Date(2019, 5, 2, 17, 00, 0, 0) , y: 2 },
-	       { x: new Date(2019, 5, 2, 20, 00, 0, 0) , y: 1 },
-	       { x: new Date(2019, 5, 2, 21, 00, 0, 0) , y: 1 },
-	       { x: new Date(2019, 5, 2, 23, 00, 0, 0) , y: 1 },
-	       { x: new Date(2019, 5, 3, 0, 00, 0, 0) , y: 26 },
-	       { x: new Date(2019, 5, 3, 1, 00, 0, 0) , y: 1 },
-	      ]
-	    }]
-	  });
-		chartAccessReq.render();
-		
+      // Grafico de Area
+      var chartArea = new CanvasJS.Chart("chartAreaContainer", {
+        animationEnabled: true,
+        exportEnabled: true,
+        title: {
+          text: "Pico de Requisições Cliente"
+        },
+        axisX: {
+          minimum: new Date(2019, 04, 20, 00, 00, 0),
+          maximum: new Date(2019, 05, 05, 23, 59, 59),
+          valueFormatString: "MMM DD HH:MM"
+        },
+        axisY: {
+          title: "Pico de Requisições",
+          titleFontColor: "#4F81BC",
+        },
+        data: [{
+          indexLabelFontColor: "darkSlateGray",
+          name: "views",
+          type: "area",
+          dataPoints: [
+            { x: new Date(2019, 4, 22, 21, 00, 0, 0), y: 185 },
+            { x: new Date(2019, 4, 22, 22, 00, 0, 0), y: 30 },
+            { x: new Date(2019, 4, 23, 19, 00, 0, 0), y: 33 },
+            { x: new Date(2019, 4, 23, 20, 00, 0, 0), y: 9 },
+            { x: new Date(2019, 4, 23, 21, 00, 0, 0), y: 27 },
+            { x: new Date(2019, 4, 26, 23, 00, 0, 0), y: 8 },
+            { x: new Date(2019, 4, 27, 10, 00, 0, 0), y: 19 },
+            { x: new Date(2019, 4, 27, 23, 00, 0, 0), y: 63 },
+            { x: new Date(2019, 4, 29, 0, 00, 0, 0), y: 79 },
+            { x: new Date(2019, 4, 29, 1, 00, 0, 0), y: 5 },
+            { x: new Date(2019, 4, 29, 6, 00, 0, 0), y: 6 },
+            { x: new Date(2019, 4, 29, 7, 00, 0, 0), y: 10 },
+            { x: new Date(2019, 4, 29, 8, 00, 0, 0), y: 248 },
+            { x: new Date(2019, 4, 29, 9, 00, 0, 0), y: 27 },
+            { x: new Date(2019, 4, 29, 20, 00, 0, 0), y: 75 },
+            { x: new Date(2019, 5, 2, 15, 00, 0, 0), y: 43 },
+            { x: new Date(2019, 5, 2, 16, 00, 0, 0), y: 173 },
+            { x: new Date(2019, 5, 2, 17, 00, 0, 0), y: 76 },
+            { x: new Date(2019, 5, 2, 18, 00, 0, 0), y: 15 },
+            { x: new Date(2019, 5, 2, 20, 00, 0, 0), y: 101 },
+            { x: new Date(2019, 5, 2, 21, 00, 0, 0), y: 408 },
+            { x: new Date(2019, 5, 2, 22, 00, 0, 0), y: 241 },
+            { x: new Date(2019, 5, 2, 23, 00, 0, 0), y: 123 },
+            { x: new Date(2019, 5, 3, 0, 00, 0, 0), y: 11 },
+          ]
+        }]
+      });
+      chartArea.render();
 
-		var arquivosDiaServidorChart = new CanvasJS.Chart("arquivosDiaServidorChart", {
-					animationEnabled: true,
-					 exportEnabled: true,
-					title: {
-	      text: "Total de Ações/Dia Servidor"
-	        },
-					theme: "theme2",
-					legend: {
-						fontSize: 14
-					},
-					toolTip: {
-						borderThickness: 0,
-						content: "<span style='\"'color: {color};'\"'>{name}</span>: {y}",
-						cornerRadius: 0
-					},
-					data: [
-						{       
-							indexLabelFontColor: "#676564",
-							indexLabelFontSize: 14,
-							legendMarkerType: "square",
-							legendText: "{indexLabel}",
-							showInLegend: true,
-							startAngle:  100,
-							type: "bar",
-							dataPoints: [	
-						  { y: 2, name: "06/03/19", indexLabel: "06/03/19", legendText: "06/03/19"},
-	      { y: 2, name: "06/04/19", indexLabel: "06/04/19", legendText: "06/04/19"},
-	      { y: 15, name: "07/04/19", indexLabel: "07/04/19", legendText: "07/04/19"},
-	      { y: 8, name: "17/04/19", indexLabel: "17/04/19", legendText: "17/04/19"},
-	      { y: 1, name: "21/04/19", indexLabel: "21/04/19", legendText: "21/04/19"},
-	      { y: 22, name: "29/04/19", indexLabel: "29/04/19", legendText: "29/04/19"},
-	      { y: 5, name: "08/05/19", indexLabel: "08/05/19", legendText: "08/05/19"},
-	      { y: 45, name: "11/05/19", indexLabel: "11/05/19", legendText: "11/05/19"},
-	      { y: 22, name: "15/05/19", indexLabel: "15/05/19", legendText: "15/05/19"},
-	      { y: 21, name: "22/05/19", indexLabel: "22/05/19", legendText: "22/05/19"},
-	      { y: 14, name: "23/05/19", indexLabel: "23/05/19", legendText: "23/05/19"},
-	      { y: 1, name: "26/05/19", indexLabel: "26/05/19", legendText: "26/05/19"},
-	      { y: 9, name: "27/05/19", indexLabel: "27/05/19", legendText: "27/05/19"},
-	      { y: 25, name: "29/05/19", indexLabel: "29/05/19", legendText: "29/05/19"},
-	      { y: 8, name: "02/06/19", indexLabel: "02/06/19", legendText: "02/06/19"},
-	      { y: 27, name: "03/06/19", indexLabel: "03/06/19", legendText: "03/06/19"},
+      var ipReqChart = new CanvasJS.Chart("chartIpReq", {
+        animationEnabled: true,
+        exportEnabled: true,
+        title: {
+          text: "Ips que mais enviam requisições"
+        },
+        theme: "theme2",
+        legend: {
+          fontSize: 14
+        },
+        toolTip: {
+          borderThickness: 0,
+          content: "<span style='\"'color: {color};'\"'>{name}</span>: {y} (#percent%)",
+          cornerRadius: 0
+        },
+        data: [
+          {
+            indexLabelFontColor: "#676464",
+            indexLabelFontSize: 14,
+            legendMarkerType: "square",
+            legendText: "{indexLabel}",
+            showInLegend: true,
+            startAngle: 90,
+            type: "doughnut",
+            dataPoints: [
 
-							]
-						}
-					]
-				});
-				
-				arquivosDiaServidorChart.render();
+              { y: 1612, name: "127.0.0.1", indexLabel: "127.0.0.1", legendText: "127.0.0.1" },
+              { y: 220, name: "192.168.0.10", indexLabel: "192.168.0.10", legendText: "192.168.0.10" },
+            ]
+          }
+        ]
+      });
 
-				var arquivosMesServidorChart = new CanvasJS.Chart("arquivosMesServidorChart", {
-					animationEnabled: true,
-					
-					title: {
-	      text: "Total de Requisições/Mês"
-	        },
-					theme: "theme2",
-					legend: {
-						fontSize: 14
-					},
-					toolTip: {
-						borderThickness: 0,
-						content: "<span style='\"'color: {color};'\"'>{name}</span>: {y}",
-						cornerRadius: 0
-					},
-					data: [
-						{       
-							indexLabelFontColor: "#676564",
-							indexLabelFontSize: 14,
-							legendMarkerType: "square",
-							legendText: "{indexLabel}",
-							showInLegend: true,
-							startAngle:  100,
-							type: "bar",
-							dataPoints: [	
-				{ y: 2, name: "03/19", indexLabel: "03/19", legendText: "03/19"},
-	      { y: 48, name: "04/19", indexLabel: "04/19", legendText: "04/19"},
-	      { y: 142, name: "05/19", indexLabel: "05/19", legendText: "05/19"},
-	      { y: 35, name: "06/19", indexLabel: "06/19", legendText: "06/19"},
+      ipReqChart.render();
+
+      var requestErrorChart = new CanvasJS.Chart("errorChart", {
+        animationEnabled: true,
+        exportEnabled: true,
+        title: {
+          text: "Conteúdos que geraram erro 404"
+        },
+        theme: "theme2",
+        legend: {
+          fontSize: 14
+        },
+        toolTip: {
+          borderThickness: 0,
+          content: "<span style='\"'color: {color};'\"'>{name}</span>: {y} (#percent%)",
+          cornerRadius: 0
+        },
+        data: [
+          {
+            indexLabelFontColor: "#676564",
+            indexLabelFontSize: 14,
+            legendMarkerType: "square",
+            legendText: "{indexLabel}",
+            showInLegend: true,
+            startAngle: 100,
+            type: "pie",
+            dataPoints: [
+
+              { y: 265, name: "/css/style.css", indexLabel: "/css/style.css", legendText: "/css/style.css" },
+              { y: 262, name: "/js/relatorios.js", indexLabel: "/js/relatorios.js", legendText: "/js/relatorios.js" },
+              { y: 75, name: "/PI/html/sobre.htmls", indexLabel: "/PI/html/sobre.htmls", legendText: "/PI/html/sobre.htmls" },
+              { y: 50, name: "/IMGS/server-web-transparente.jpg", indexLabel: "/IMGS/server-web-transparente.jpg", legendText: "/IMGS/server-web-transparente.jpg" },
+              { y: 17, name: "/PI/html/relatorios/relatorio.java", indexLabel: "/PI/html/relatorios/relatorio.java", legendText: "/PI/html/relatorios/relatorio.java" },
+            ]
+          }
+        ]
+      });
+
+      requestErrorChart.render();
 
 
-							]
-						}
-					]
-				});
-				
-				arquivosMesServidorChart.render();		
-				
+      var renderArquivosDiaChart = new CanvasJS.Chart("arquivosDiaChart", {
+        animationEnabled: true,
+        exportEnabled: true,
+        title: {
+          text: "Total de Requisições/Dia Cliente"
+        },
+        theme: "theme2",
+        legend: {
+          fontSize: 14
+        },
+        toolTip: {
+          borderThickness: 0,
+          content: "<span style='\"'color: {color};'\"'>{name}</span>: {y}",
+          cornerRadius: 0
+        },
+        data: [
+          {
+            indexLabelFontColor: "#676564",
+            indexLabelFontSize: 14,
+            legendMarkerType: "square",
+            legendText: "{indexLabel}",
+            showInLegend: true,
+            startAngle: 100,
+            type: "bar",
+            dataPoints: [
+              { y: 215, name: "22/05/19", indexLabel: "22/05/19", legendText: "22/05/19" },
+              { y: 69, name: "23/05/19", indexLabel: "23/05/19", legendText: "23/05/19" },
+              { y: 8, name: "26/05/19", indexLabel: "26/05/19", legendText: "26/05/19" },
+              { y: 82, name: "27/05/19", indexLabel: "27/05/19", legendText: "27/05/19" },
+              { y: 450, name: "29/05/19", indexLabel: "29/05/19", legendText: "29/05/19" },
+              { y: 1180, name: "02/06/19", indexLabel: "02/06/19", legendText: "02/06/19" },
+              { y: 108, name: "03/06/19", indexLabel: "03/06/19", legendText: "03/06/19" },
 
-	  function toggleDataSeries(e) {
-	    if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-	      e.dataSeries.visible = false;
-	    }
-	    else {
-	      e.dataSeries.visible = true;
-	    }
-			chartLine.render();		
+            ]
+          }
+        ]
+      });
 
-		}
+      renderArquivosDiaChart.render();
 
-	}
+      var renderArquivosMesChart = new CanvasJS.Chart("arquivosMesChart", {
+        animationEnabled: true,
+
+        title: {
+          text: "Total de Requisições/Mês Cliente"
+        },
+        theme: "theme2",
+        legend: {
+          fontSize: 14
+        },
+        toolTip: {
+          borderThickness: 0,
+          content: "<span style='\"'color: {color};'\"'>{name}</span>: {y}",
+          cornerRadius: 0
+        },
+        data: [
+          {
+            indexLabelFontColor: "#676564",
+            indexLabelFontSize: 14,
+            legendMarkerType: "square",
+            legendText: "{indexLabel}",
+            showInLegend: true,
+            startAngle: 100,
+            type: "bar",
+            dataPoints: [
+              { y: 824, name: "05/19", indexLabel: "05/19", legendText: "05/19" },
+              { y: 1311, name: "06/19", indexLabel: "06/19", legendText: "06/19" },
+
+            ]
+          }
+        ]
+      });
+
+      renderArquivosMesChart.render();
+
+      var IpDistintosChart = new CanvasJS.Chart("IpDistintosChart",
+        {
+          title: {
+            text: "Ips Distintos"
+          },
+          animationEnabled: true,
+          exportEnabled: true,
+          data: [
+            {
+              type: "pyramid",
+              //valueRepresents: "area",
+              indexLabelFontSize: 20,
+              indexLabelFontFamily: "Lucida",
+              dataPoints: [
+                { y: 1871, name: "127.0.0.1", indexLabel: "127.0.0.1", legendText: "127.0.0.1" },
+                { y: 280, name: "192.168.0.10", indexLabel: "192.168.0.10", legendText: "192.168.0.10" },
+              ]
+            }
+          ]
+        });
+      IpDistintosChart.render();
+
+      var servidorAcoesChart = new CanvasJS.Chart("servidorAcoesChart", {
+        animationEnabled: true,
+        exportEnabled: true,
+        title: {
+          text: "Eventos do Servidor"
+        },
+        theme: "theme2",
+        legend: {
+          fontSize: 14
+        },
+        toolTip: {
+          borderThickness: 0,
+          content: "<span style='\"'color: {color};'\"'>{name}</span>: {y} (#percent%)",
+          cornerRadius: 0
+        },
+        data: [
+          {
+            indexLabelFontColor: "#676464",
+            indexLabelFontSize: 14,
+            legendMarkerType: "square",
+            legendText: "{indexLabel}",
+            showInLegend: true,
+            startAngle: 90,
+            type: "doughnut",
+            dataPoints: [
+
+              { y: 220, name: "Iniciado", indexLabel: "Iniciado", legendText: "Iniciado" },
+              { y: 7, name: "Parado", indexLabel: "Parado", legendText: "Parado" },
+            ]
+          }
+        ]
+      });
+
+      servidorAcoesChart.render();
+
+      var statusCodeChart = new CanvasJS.Chart("statusCodeChart", {
+        animationEnabled: true,
+        exportEnabled: true,
+        title: {
+          text: "Códigos de Resposta"
+        },
+        theme: "theme2",
+        legend: {
+          fontSize: 14
+        },
+        toolTip: {
+          borderThickness: 0,
+          content: "<span style='\"'color: {color};'\"'>{name}</span>: {y} (#percent%)",
+          cornerRadius: 0
+        },
+        data: [
+          {
+            indexLabelFontColor: "#676464",
+            indexLabelFontSize: 14,
+            legendMarkerType: "square",
+            legendText: "{indexLabel}",
+            showInLegend: true,
+            startAngle: 90,
+            type: "pie",
+            dataPoints: [
+
+              { y: 1367, name: "200", indexLabel: "200", legendText: "200" },
+              { y: 783, name: "404", indexLabel: "404", legendText: "404" },
+              { y: 65, name: "500", indexLabel: "500", legendText: "500" },
+            ]
+          }
+        ]
+      });
+
+      statusCodeChart.render();
+
+
+      // Grafico de Area
+      var chartAccessReq = new CanvasJS.Chart("chartAccessReq", {
+        animationEnabled: true,
+        exportEnabled: true,
+        colorSet: "greenShades",
+        title: {
+          text: "Pico de Ações Servidor"
+        },
+        axisX: {
+          minimum: new Date(2019, 02, 05, 00, 00, 0),
+          maximum: new Date(2019, 05, 05, 23, 59, 59),
+          valueFormatString: "MMM DD HH:MM"
+        },
+        axisY: {
+          title: "Pico de Requisições Servidor",
+          titleFontColor: "#4F81BC",
+        },
+        data: [{
+          indexLabelFontColor: "darkSlateGray",
+          name: "views",
+          type: "area",
+          dataPoints: [
+            { x: new Date(2019, 2, 6, 0, 00, 0, 0), y: 2 },
+            { x: new Date(2019, 3, 6, 23, 00, 0, 0), y: 2 },
+            { x: new Date(2019, 3, 7, 13, 00, 0, 0), y: 1 },
+            { x: new Date(2019, 3, 7, 14, 00, 0, 0), y: 5 },
+            { x: new Date(2019, 3, 7, 16, 00, 0, 0), y: 3 },
+            { x: new Date(2019, 3, 7, 18, 00, 0, 0), y: 6 },
+            { x: new Date(2019, 3, 17, 20, 00, 0, 0), y: 1 },
+            { x: new Date(2019, 3, 17, 21, 00, 0, 0), y: 7 },
+            { x: new Date(2019, 3, 21, 20, 00, 0, 0), y: 1 },
+            { x: new Date(2019, 3, 29, 2, 00, 0, 0), y: 19 },
+            { x: new Date(2019, 3, 29, 11, 00, 0, 0), y: 3 },
+            { x: new Date(2019, 4, 8, 17, 00, 0, 0), y: 5 },
+            { x: new Date(2019, 4, 11, 20, 00, 0, 0), y: 1 },
+            { x: new Date(2019, 4, 11, 21, 00, 0, 0), y: 25 },
+            { x: new Date(2019, 4, 11, 22, 00, 0, 0), y: 13 },
+            { x: new Date(2019, 4, 11, 23, 00, 0, 0), y: 6 },
+            { x: new Date(2019, 4, 15, 1, 00, 0, 0), y: 4 },
+            { x: new Date(2019, 4, 15, 2, 00, 0, 0), y: 2 },
+            { x: new Date(2019, 4, 15, 9, 00, 0, 0), y: 1 },
+            { x: new Date(2019, 4, 15, 14, 00, 0, 0), y: 3 },
+            { x: new Date(2019, 4, 15, 15, 00, 0, 0), y: 11 },
+            { x: new Date(2019, 4, 15, 16, 00, 0, 0), y: 1 },
+            { x: new Date(2019, 4, 22, 0, 00, 0, 0), y: 5 },
+            { x: new Date(2019, 4, 22, 1, 00, 0, 0), y: 1 },
+            { x: new Date(2019, 4, 22, 21, 00, 0, 0), y: 13 },
+            { x: new Date(2019, 4, 22, 22, 00, 0, 0), y: 2 },
+            { x: new Date(2019, 4, 23, 19, 00, 0, 0), y: 7 },
+            { x: new Date(2019, 4, 23, 20, 00, 0, 0), y: 2 },
+            { x: new Date(2019, 4, 23, 21, 00, 0, 0), y: 5 },
+            { x: new Date(2019, 4, 26, 23, 00, 0, 0), y: 1 },
+            { x: new Date(2019, 4, 27, 10, 00, 0, 0), y: 1 },
+            { x: new Date(2019, 4, 27, 23, 00, 0, 0), y: 8 },
+            { x: new Date(2019, 4, 29, 0, 00, 0, 0), y: 6 },
+            { x: new Date(2019, 4, 29, 1, 00, 0, 0), y: 1 },
+            { x: new Date(2019, 4, 29, 6, 00, 0, 0), y: 1 },
+            { x: new Date(2019, 4, 29, 8, 00, 0, 0), y: 9 },
+            { x: new Date(2019, 4, 29, 9, 00, 0, 0), y: 5 },
+            { x: new Date(2019, 4, 29, 20, 00, 0, 0), y: 3 },
+            { x: new Date(2019, 5, 2, 15, 00, 0, 0), y: 1 },
+            { x: new Date(2019, 5, 2, 16, 00, 0, 0), y: 2 },
+            { x: new Date(2019, 5, 2, 17, 00, 0, 0), y: 2 },
+            { x: new Date(2019, 5, 2, 20, 00, 0, 0), y: 1 },
+            { x: new Date(2019, 5, 2, 21, 00, 0, 0), y: 1 },
+            { x: new Date(2019, 5, 2, 23, 00, 0, 0), y: 1 },
+            { x: new Date(2019, 5, 3, 0, 00, 0, 0), y: 26 },
+            { x: new Date(2019, 5, 3, 1, 00, 0, 0), y: 1 },
+          ]
+        }]
+      });
+      chartAccessReq.render();
+
+
+      var arquivosDiaServidorChart = new CanvasJS.Chart("arquivosDiaServidorChart", {
+        animationEnabled: true,
+        exportEnabled: true,
+        title: {
+          text: "Total de Ações/Dia Servidor"
+        },
+        theme: "theme2",
+        legend: {
+          fontSize: 14
+        },
+        toolTip: {
+          borderThickness: 0,
+          content: "<span style='\"'color: {color};'\"'>{name}</span>: {y}",
+          cornerRadius: 0
+        },
+        data: [
+          {
+            indexLabelFontColor: "#676564",
+            indexLabelFontSize: 14,
+            legendMarkerType: "square",
+            legendText: "{indexLabel}",
+            showInLegend: true,
+            startAngle: 100,
+            type: "bar",
+            dataPoints: [
+              { y: 2, name: "06/03/19", indexLabel: "06/03/19", legendText: "06/03/19" },
+              { y: 2, name: "06/04/19", indexLabel: "06/04/19", legendText: "06/04/19" },
+              { y: 15, name: "07/04/19", indexLabel: "07/04/19", legendText: "07/04/19" },
+              { y: 8, name: "17/04/19", indexLabel: "17/04/19", legendText: "17/04/19" },
+              { y: 1, name: "21/04/19", indexLabel: "21/04/19", legendText: "21/04/19" },
+              { y: 22, name: "29/04/19", indexLabel: "29/04/19", legendText: "29/04/19" },
+              { y: 5, name: "08/05/19", indexLabel: "08/05/19", legendText: "08/05/19" },
+              { y: 45, name: "11/05/19", indexLabel: "11/05/19", legendText: "11/05/19" },
+              { y: 22, name: "15/05/19", indexLabel: "15/05/19", legendText: "15/05/19" },
+              { y: 21, name: "22/05/19", indexLabel: "22/05/19", legendText: "22/05/19" },
+              { y: 14, name: "23/05/19", indexLabel: "23/05/19", legendText: "23/05/19" },
+              { y: 1, name: "26/05/19", indexLabel: "26/05/19", legendText: "26/05/19" },
+              { y: 9, name: "27/05/19", indexLabel: "27/05/19", legendText: "27/05/19" },
+              { y: 25, name: "29/05/19", indexLabel: "29/05/19", legendText: "29/05/19" },
+              { y: 8, name: "02/06/19", indexLabel: "02/06/19", legendText: "02/06/19" },
+              { y: 27, name: "03/06/19", indexLabel: "03/06/19", legendText: "03/06/19" },
+
+            ]
+          }
+        ]
+      });
+
+      arquivosDiaServidorChart.render();
+
+      var arquivosMesServidorChart = new CanvasJS.Chart("arquivosMesServidorChart", {
+        animationEnabled: true,
+
+        title: {
+          text: "Total de Requisições/Mês"
+        },
+        theme: "theme2",
+        legend: {
+          fontSize: 14
+        },
+        toolTip: {
+          borderThickness: 0,
+          content: "<span style='\"'color: {color};'\"'>{name}</span>: {y}",
+          cornerRadius: 0
+        },
+        data: [
+          {
+            indexLabelFontColor: "#676564",
+            indexLabelFontSize: 14,
+            legendMarkerType: "square",
+            legendText: "{indexLabel}",
+            showInLegend: true,
+            startAngle: 100,
+            type: "bar",
+            dataPoints: [
+              { y: 2, name: "03/19", indexLabel: "03/19", legendText: "03/19" },
+              { y: 48, name: "04/19", indexLabel: "04/19", legendText: "04/19" },
+              { y: 142, name: "05/19", indexLabel: "05/19", legendText: "05/19" },
+              { y: 35, name: "06/19", indexLabel: "06/19", legendText: "06/19" },
+
+
+            ]
+          }
+        ]
+      });
+
+      arquivosMesServidorChart.render();
+
+
+      function toggleDataSeries(e) {
+        if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+          e.dataSeries.visible = false;
+        }
+        else {
+          e.dataSeries.visible = true;
+        }
+        chartLine.render();
+
+      }
+
+    }
   </script>
 
 </head>
 
 <body>
- <div id="header"></div>
+  <div id="header"></div>
   <div class="row mr-5">
-   <div class="col-lg-6" id="chartMostAccess" style="height: 300px; width: 200px;"></div>
-   <div class="col-lg-6" id="chartIpReq" style="height: 300px; width: 200px;"></div>
-   <div class="col-lg-6" id="errorChart" style="height: 300px; width: 200px;"></div>
+    <div class="col-lg-6" id="chartMostAccess" style="height: 300px; width: 200px;"></div>
+    <div class="col-lg-6" id="chartIpReq" style="height: 300px; width: 200px;"></div>
+    <div class="col-lg-6" id="errorChart" style="height: 300px; width: 200px;"></div>
     <div class="col-lg-6" id="chartAreaContainer" style="height: 300px; width: 200px;"></div>
-		<div class="col-lg-6" id="arquivosDiaChart" style="height: 300px; width: 200px;"></div> 
-		<div class="col-lg-6" id="arquivosMesChart" style="height: 300px; width: 200px;"></div>
-		<div class="col-lg-6" id="IpDistintosChart" style="height: 300px; width: 200px;"></div>
-		<div class="col-lg-6" id="servidorAcoesChart" style="height: 300px; width: 200px;"></div>
-		<div class="col-lg-6" id="statusCodeChart" style="height: 300px; width: 200px;"></div>
-		<div class="col-lg-6" id="chartAccessReq" style="height: 300px; width: 200px;"></div>
-		<div class="col-lg-6" id="arquivosDiaServidorChart" style="height: 300px; width: 200px;"></div>
-		<div class="col-lg-6" id="arquivosMesServidorChart" style="height: 300px; width: 200px;"></div>
-			
+    <div class="col-lg-6" id="arquivosDiaChart" style="height: 300px; width: 200px;"></div>
+    <div class="col-lg-6" id="arquivosMesChart" style="height: 300px; width: 200px;"></div>
+    <div class="col-lg-6" id="IpDistintosChart" style="height: 300px; width: 200px;"></div>
+    <div class="col-lg-6" id="servidorAcoesChart" style="height: 300px; width: 200px;"></div>
+    <div class="col-lg-6" id="statusCodeChart" style="height: 300px; width: 200px;"></div>
+    <div class="col-lg-6" id="chartAccessReq" style="height: 300px; width: 200px;"></div>
+    <div class="col-lg-6" id="arquivosDiaServidorChart" style="height: 300px; width: 200px;"></div>
+    <div class="col-lg-6" id="arquivosMesServidorChart" style="height: 300px; width: 200px;"></div>
+
   </div>
   <div id="footer"></div>
 </body>
