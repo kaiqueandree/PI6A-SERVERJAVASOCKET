@@ -39,14 +39,12 @@
       // Arquivos mais acessados
       var chartAccess = new CanvasJS.Chart("chartMostAccess", {
         animationEnabled: true,
-        exportEnabled: true,
         title: {
           text: "Arquivos mais acessados"
         },
         data: [{
           type: "column",
           indexLabel: "{label} {y}",
-          exportEnabled: true,
           titleFontColor: "#4F81BC",
           dataPoints: [
             { y: 115, label: "/PI/html/footer.html", indexLabel: " " },
@@ -539,21 +537,107 @@
 
 <body>
   <div id="header"></div>
-  <div class="row mr-5">
-    <div class="col-lg-6" id="chartMostAccess" style="height: 300px; width: 200px;"></div>
-    <div class="col-lg-6" id="chartIpReq" style="height: 300px; width: 200px;"></div>
-    <div class="col-lg-6" id="errorChart" style="height: 300px; width: 200px;"></div>
-    <div class="col-lg-6" id="chartAreaContainer" style="height: 300px; width: 200px;"></div>
-    <div class="col-lg-6" id="arquivosDiaChart" style="height: 300px; width: 200px;"></div>
-    <div class="col-lg-6" id="arquivosMesChart" style="height: 300px; width: 200px;"></div>
-    <div class="col-lg-6" id="IpDistintosChart" style="height: 300px; width: 200px;"></div>
-    <div class="col-lg-6" id="servidorAcoesChart" style="height: 300px; width: 200px;"></div>
-    <div class="col-lg-6" id="statusCodeChart" style="height: 300px; width: 200px;"></div>
-    <div class="col-lg-6" id="chartAccessReq" style="height: 300px; width: 200px;"></div>
-    <div class="col-lg-6" id="arquivosDiaServidorChart" style="height: 300px; width: 200px;"></div>
-    <div class="col-lg-6" id="arquivosMesServidorChart" style="height: 300px; width: 200px;"></div>
-
+  <div class="container">
+    <div class="row my-3">
+        <div class="col">
+            <h4>Relatórios do Servidor</h4>
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col-md-6 py-1">
+            <div class="card">
+                <div class="card-body">
+                  <div id="chartMostAccess" style="height: 300px"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 py-1">
+            <div class="card">
+                <div class="card-body">
+                  <div id="chartIpReq" style="height: 300px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row py-2">
+        <div class="col-md-4 py-1">
+            <div class="card">
+                <div class="card-body">
+                  <div id="errorChart" style="height: 300px"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 py-1">
+            <div class="card">
+                <div class="card-body">
+                  <div id="chartAreaContainer" style="height: 300px"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 py-1">
+            <div class="card">
+                <div class="card-body">
+                  <div id="arquivosDiaChart" style="height: 300px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-2">
+        <div class="col-md-6 py-1">
+            <div class="card">
+                <div class="card-body">
+                  <div id="arquivosMesChart" style="height: 300px"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 py-1">
+            <div class="card">
+                <div class="card-body">
+                  <div id="IpDistintosChart" style="height: 300px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row py-2">
+        <div class="col-md-4 py-1">
+            <div class="card">
+                <div class="card-body">
+                  <div id="servidorAcoesChart" style="height: 300px"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 py-1">
+            <div class="card">
+                <div class="card-body">
+                  <div id="statusCodeChart" style="height: 300px"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 py-1">
+            <div class="card">
+                <div class="card-body">
+                  <div id="chartAccessReq" style="height: 300px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-2">
+      <div class="col-md-6 py-1">
+          <div class="card">
+              <div class="card-body">
+                <div id="arquivosDiaServidorChart" style="height: 300px"></div>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-6 py-1">
+          <div class="card">
+              <div class="card-body">
+                <div id="arquivosMesServidorChart" style="height: 300px"></div>
+              </div>
+          </div>
+      </div>
   </div>
+</div>
   <div id="footer"></div>
 </body>
 

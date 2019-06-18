@@ -16,18 +16,18 @@ public class RelatorioGenerator extends Relatorio{
 		super();
 	}
 
-	AcoesServidor 			acoes;
+	AcoesServidor acoes;
 	FileNotFoundRequisicoes fnf;
-	IpDistintos 			ipDistintos;
-	PicoAcessoServidor 		picoServidor;
-	RelatorioAcesso 		relAcesso;
-	RelatorioPico 			picoCliente;
-	RelatorioIPs 			relIps;
-	RequisicoesDia			reqDiaCliente;
-	RequisicoesMes			reqMesCliente;
-	RequisicoesDiaServidor	reqDiaServidor;
-	RequisicoesMesServidor	reqMesServidor;
-	StatusCodeRequisicao    statusCode;
+	IpDistintos ipDistintos;
+	PicoAcessoServidor picoServidor;
+	RelatorioAcesso relAcesso;
+	RelatorioPico picoCliente;
+	RelatorioIPs relIps;
+	RequisicoesDia reqDiaCliente;
+	RequisicoesMes reqMesCliente;
+	RequisicoesDiaServidor reqDiaServidor;
+	RequisicoesMesServidor reqMesServidor;
+	StatusCodeRequisicao statusCode;
 	
 	
 
@@ -39,35 +39,35 @@ public class RelatorioGenerator extends Relatorio{
 		int i = 0;
 		String response = "";
 		
-		acoes            = new AcoesServidor();
-		fnf              = new FileNotFoundRequisicoes();
-		ipDistintos      = new IpDistintos();
-		picoServidor     = new PicoAcessoServidor();
-		relAcesso        = new RelatorioAcesso();
-		picoCliente      = new RelatorioPico();
-		relIps           = new RelatorioIPs();
-		reqDiaCliente    = new RequisicoesDia();
-		reqMesCliente    = new RequisicoesMes();
-		reqDiaServidor   = new RequisicoesDiaServidor();
-		reqMesServidor   = new RequisicoesMesServidor();
-		statusCode       = new StatusCodeRequisicao();
+		acoes = new AcoesServidor();
+		fnf = new FileNotFoundRequisicoes();
+		ipDistintos = new IpDistintos();
+		picoServidor = new PicoAcessoServidor();
+		relAcesso = new RelatorioAcesso();
+		picoCliente = new RelatorioPico();
+		relIps = new RelatorioIPs();
+		reqDiaCliente = new RequisicoesDia();
+		reqMesCliente = new RequisicoesMes();
+		reqDiaServidor = new RequisicoesDiaServidor();
+		reqMesServidor = new RequisicoesMesServidor();
+		statusCode = new StatusCodeRequisicao();
 		
 		 while((i=fs.read())!=-1){    
             response += (char)i;    
             }
 
-		    String replace =  response.replaceAll("<!--Acoes-->", 		   	    relAcesso.consultarDB());
-	 	    replace = replace.replaceAll("<!--Pico-cliente-->",   			picoCliente.consultarDB());
-	 	    replace = replace.replaceAll("<!--IP-Requisicoes-->",           relIps.consultarDB());
-	 	    replace = replace.replaceAll("<!--Erro-404-->", 	            fnf.consultarDB());
-	 	    replace = replace.replaceAll("<!--Total-Req-Cliente-->",        reqDiaCliente.consultarDB());
-	 	    replace = replace.replaceAll("<!--total-Mes-Cliente-->", 		reqMesCliente.consultarDB());
-	 	    replace = replace.replaceAll("<!--Ips--Distintos-->", 			ipDistintos.consultarDB());
-	 	    replace = replace.replaceAll("<!--eventos-Servidor-->", 	    acoes.consultarDB());
-	 	    replace = replace.replaceAll("<!--status-Codes-->", 			statusCode.consultarDB());
-	 	    replace = replace.replaceAll("<!--pico-Servidor-->", 			picoServidor.consultarDB());
-	 	    replace = replace.replaceAll("<!--Total-acoes-dia-->",          reqDiaServidor.consultarDB());
-	 	    replace = replace.replaceAll("<!--total-Acoes-Mes-->", 		 	reqMesServidor.consultarDB());
+		 	String replace =  response.replaceAll("<!--Acoes-->", relAcesso.consultarDB());
+	 	    replace = replace.replaceAll("<!--Pico-cliente-->", picoCliente.consultarDB());
+	 	    replace = replace.replaceAll("<!--IP-Requisicoes-->", relIps.consultarDB());
+	 	    replace = replace.replaceAll("<!--Erro-404-->", fnf.consultarDB());
+	 	    replace = replace.replaceAll("<!--Total-Req-Cliente-->", reqDiaCliente.consultarDB());
+	 	    replace = replace.replaceAll("<!--total-Mes-Cliente-->", reqMesCliente.consultarDB());
+	 	    replace = replace.replaceAll("<!--Ips--Distintos-->", ipDistintos.consultarDB());
+	 	    replace = replace.replaceAll("<!--eventos-Servidor-->", acoes.consultarDB());
+	 	    replace = replace.replaceAll("<!--status-Codes-->", statusCode.consultarDB());
+	 	    replace = replace.replaceAll("<!--pico-Servidor-->", picoServidor.consultarDB());
+	 	    replace = replace.replaceAll("<!--Total-acoes-dia-->", reqDiaServidor.consultarDB());
+	 	    replace = replace.replaceAll("<!--total-Acoes-Mes-->", reqMesServidor.consultarDB());
 	 	    System.out.println(replace);
 	 	    fs.close(); 
   
@@ -78,6 +78,11 @@ public class RelatorioGenerator extends Relatorio{
 	}
 	
 	public static void main(String[] args) throws IOException, SQLException {
+
+		RelatorioGenerator rel = new RelatorioGenerator();
+		System.out.println(rel.GenerateFile());
+	}
+}
 
 //	    AcoesServidor 			acoes          = new AcoesServidor();
 //		FileNotFoundRequisicoes fnf            = new FileNotFoundRequisicoes();
@@ -118,7 +123,3 @@ public class RelatorioGenerator extends Relatorio{
 //         fs.close(); 
 //         
 //         byte[] b = replace.getBytes();]
-		RelatorioGenerator rel = new RelatorioGenerator();
-		System.out.println(rel.GenerateFile());
-	}
-}
